@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Jimma Primary | ኤስኦኤስ ጅማ ትምህርት ቤት</title>
+
+    <!-- Google Fonts for professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons (Phones, Social Media) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- 1. GENERAL STYLES --- */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; }
+        ul { list-style: none; padding: 0; }
+
+        /* --- 2. HEADER & NAVIGATION --- */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-area img {
+            height: 60px; /* Fixed height for consistency */
+            width: auto;
+        }
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: #1e40af; /* SOS Blue */
+            margin: 0;
+            font-weight: 800;
+        }
+        .logo-text span {
+            font-size: 0.8rem;
+            color: #666;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        nav a:hover {
+            color: #1e40af;
+        }
+
+        /* --- 3. HERO SECTION (Welcome Banner) --- */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+        .hero-btn {
+            background: white;
+            color: #1e40af;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+        .hero-btn:hover {
+            transform: scale(1.05);
+            background: #f0f9ff;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            color: #1e40af;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .grades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .grade-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #3b82f6;
+        }
+        .grade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .grade-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        .grade-links a {
+            display: block;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .grade-links a:hover {
+            opacity: 0.8;
+        }
+        .btn-blue { background: #eff6ff; color: #1e40af; }
+        .btn-green { background: #ecfdf5; color: #059669; }
+
+        /* TIMETABLE STYLES */
+        .timetable-container {
+            margin-top: 40px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        thead th {
+            background-color: #34495e;
+            color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        tbody tr:hover {
+            background-color: #e9f7fe;
+        }
+
+        /* CONTACT SECTION */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .contact-info, .contact-form-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .info-item i {
+            color: #1e40af;
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button[type="submit"]:hover { background: #1e3a8a; }
+
+        footer {
+            background: #111827;
+            color: #9ca3af;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+        footer p { margin: 5px 0; }
+    </style>
+</head>
+<body id="home">
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnha5yr1-WJPNyTLxS1IX_aFxntO1R13UT8Fu0hBkgQ&s" alt="SOS Logo">
+                <div class="logo-text">
+                    <h1>SOS Jimma Primary School</h1>
+                    <span>ኤስኦኤስ ጅማ ትምህርት ቤት | Hermann Gmeiner School</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#grades">Classes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Welcome) -->
+    <section class="hero">
+        <h2>A Loving Home for Every Child</h2>
+        <p>Providing quality education and care in Jimma, Ethiopia since 2012.</p>
+        <p><em>የልህቀት ማዕከል | Giddu-gala Barnootaa</em></p>
+        <a href="#grades" class="hero-btn">View Classes (ክፍሎች)</a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-container">
+        <div class="section-title">
+            <h2>Our History</h2>
+            <p>About Hermann Gmeiner & Our Mission</p>
+        </div>
+        <div class="about-box">
+            <p><strong>Hermann Gmeiner</strong> was the founder of the SOS Children's Village movement. He dedicated his life to providing a nurturing environment for children in need, ensuring they receive education, love, and care.</p>
+            <br>
+            <p><strong>SOS Jimma</strong> creates a family-like atmosphere where children can grow and thrive. Our school aims to provide quality education while fostering social and emotional development for students from Grade 1 to Grade 8.</p>
+        </div>
+    </section>
+
+    <!-- GRADES SECTION -->
+    <section id="grades" class="section-container">
+        <div class="section-title">
+            <h2>Our Classes</h2>
+            <p>Telegram Channels & Parent Groups</p>
+        </div>
+        
+        <div class="grades-grid">
+            <!-- Grade Cards (1-8) -->
+            <div class="grade-card">
+                <div class="grade-number">Grade 1</div>
+                <div>75 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg1" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g1parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 2</div>
+                <div>68 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/+dF6uITgd-2UzNjJk" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g2parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 3</div>
+                <div>80 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg3" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g3parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 4</div>
+                <div>72 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg4" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g4parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 5</div>
+                <div>65 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg5" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g5parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 6</div>
+                <div>70 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg6" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g6parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 7</div>
+                <div>60 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg7" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g7parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 8</div>
+                <div>55 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/+Mn8Vc7JEP8FlMGJk" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g8parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMETABLE SECTION -->
+    <section class="section-container">
+        <div class="section-title">
+            <h2>Weekly Subject Outline for Grades 1 to 8</h2>
+        </div>
+        
+        <div class="selection-area">
+            <label for="gradeSectionSelect">Select Grade & Section:</label>
+            <select id="gradeSectionSelect"></select>
+        </div>
+
+        <div id="timetableContainer" class="timetable-container">
+            <!-- Timetable will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Manually transcribed timetable data from the image
+        const timetableData = {
+            "1A": {
+                "Monday": ["A/orom", "Amh", "Eng", "HPE", "Env.sci", "Scie.En", "Maths"],
+                "Tuesday": ["A/orom", "Amh", "Eng", "HPE", "Geda", "Env.sci", "Eng"],
+                "Wednesday": ["Art", "Maths", "Geda", "Spoken", "Env.sci", "A/orom", "Maths"],
+                "Thursday": ["A/orom", "Amh", "Eng", "Moral", "Eng", "Spoken", "Maths"],
+                "Friday": ["Art", "Maths", "Maths", "Env.sci", "Eng", "Spoken"] // 6 periods for Friday
+            },
+            "1B": {
+                "Monday": ["Env.sci", "Maths", "Amh", "Eng", "Art", "Maths", "Spoken"],
+                "Tuesday": ["Spoken", "Maths", "HPE", "Eng", "A/orom", "Amh", "Moral"],
+                "Wednesday": ["Moral", "Env.sci", "Spoken", "HPE", "Eng", "Env.sci", "Amh"],
+                "Thursday": ["Moral", "HPE", "A/orom", "Maths", "Env.sci", "Scie.En", "Art"],
+                "Friday": ["Amh", "Eng", "HPE", "Maths", "Moral", "Env.sci"]
+            },
+            "1C": {
+                "Monday": ["HPE", "Eng", "Env.sci", "Art", "Moral", "Maths", "Env.sci"],
+                "Tuesday": ["A/orom", "Maths", "Env.sci", "Maths", "A/orom", "Moral", "Eng"],
+                "Wednesday": ["Amh", "Eng", "Amh", "Amh", "Art", "HPE", "Spoken"],
+                "Thursday": ["Eng", "Env.sci", "Eng", "Amh", "Maths", "Scie.En", "Eng"],
+                "Friday": ["A/orom", "Maths", "Env.sci", "Art", "Maths", "Moral"]
+            },
+            "1D": {
+                "Monday": ["Eng", "Env.sci", "Amh", "Maths", "Spoken", "A/orom", "Moral"],
+                "Tuesday": ["Moral", "Moral", "Env.sci", "A/orom", "Geda", "Maths", "Scie.En"],
+                "Wednesday": ["Maths", "Eng", "Env.sci", "Art", "HPE", "Maths", "Spoken"],
+                "Thursday": ["Eng", "Maths", "Eng", "Env.sci", "Art", "HPE", "Maths"],
+                "Friday": ["Amh", "Maths", "Spoken", "A/orom", "Eng", "Maths"]
+            },
+            "2A": {
+                "Monday": ["A/orom", "HPE", "Maths", "Scie.En", "Maths", "Amh", "Eng"],
+                "Tuesday": ["Eng", "Art", "Maths", "Env.sci", "HPE", "Moral", "Spoken"],
+                "Wednesday": ["Env.sci", "Amh", "Maths", "A/orom", "Eng", "Geda", "Eng"],
+                "Thursday": ["A/orom", "Env.sci", "Eng", "Spoken", "Amh", "Maths", "Env.sci"],
+                "Friday": ["Eng", "A/orom", "Maths", "Maths", "Env.sci", "Eng"]
+            },
+            "2B": {
+                "Monday": ["Eng", "Env.sci", "Geda", "Art", "Moral", "Maths", "A/orom"],
+                "Tuesday": ["Maths", "Maths", "Spoken", "Eng", "Maths", "Amh", "Maths"],
+                "Wednesday": ["Env.sci", "Moral", "A/orom", "Spoken", "Env.sci", "Eng", "Moral"],
+                "Thursday": ["Maths", "Eng", "Geda", "Amh", "Maths", "Env.sci", "HPE"],
+                "Friday": ["Eng", "HPE", "Eng", "A/orom", "Maths", "Env.sci"]
+            },
+            "2C": {
+                "Monday": ["Env.sci", "Art", "Amh", "HPE", "Eng", "Maths", "Moral"],
+                "Tuesday": ["Spoken", "Env.sci", "Eng", "Maths", "Amh", "Maths", "Env.sci"],
+                "Wednesday": ["Moral", "Maths", "Spoken", "Env.sci", "A/orom", "Env.sci", "Amh"],
+                "Thursday": ["A/orom", "Amh", "Art", "Eng", "Maths", "HPE", "Amh"],
+                "Friday": ["A/orom", "Art", "Geda", "Maths", "HPE", "Env.sci"]
+            },
+            "2D": {
+                "Monday": ["Maths", "Amh", "Eng", "Maths", "Env.sci", "A/orom", "Art"],
+                "Tuesday": ["HPE", "Art", "HPE", "Maths", "Eng", "Moral", "Amh"],
+                "Wednesday": ["Spoken", "Art", "Env.sci", "Amh", "Maths", "Spoken", "Env.sci"],
+                "Thursday": ["A/orom", "Amh", "Maths", "Moral", "Env.sci", "Eng", "Art"],
+                "Friday": ["Maths", "Amh", "Moral", "Env.sci", "Scie.En", "Amh"]
+            },
+            "3A": {
+                "Monday": ["Geda", "Moral", "Spoken", "Maths", "A/orom", "Env.sci", "Eng"],
+                "Tuesday": ["Amh", "Moral", "A/orom", "Eng", "Env.sci", "Maths", "Maths"],
+                "Wednesday": ["Eng", "HPE", "Maths", "Spoken", "A/orom", "Env.sci", "Art"],
+                "Thursday": ["Maths", "HPE", "Geda", "Env.sci", "A/orom", "ICT", "Eng"],
+                "Friday": ["Amh", "Maths", "Eng", "Scie.En", "Eng", "A/orom"]
+            },
+            "3B": {
+                "Monday": ["Spoken", "HPE", "Maths", "Amh", "Eng", "Env.sci", "A/orom"],
+                "Tuesday": ["Maths", "Amh", "Moral", "Env.sci", "Art", "Eng", "Spoken"],
+                "Wednesday": ["A/orom", "Scie.En", "Env.sci", "Amh", "Maths", "Eng", "Moral"],
+                "Thursday": ["Maths", "HPE", "Env.sci", "Moral", "Amh", "Eng", "Maths"],
+                "Friday": ["ICT", "Eng", "Maths", "Amh", "Env.sci", "Art"]
+            },
+            "3C": {
+                "Monday": ["Amh", "Moral", "HPE", "Env.sci", "Maths", "Spoken", "Eng"],
+                "Tuesday": ["ICT", "Scie.En", "Amh", "Maths", "Maths", "Eng", "HPE"],
+                "Wednesday": ["Env.sci", "Spoken", "Art", "Maths", "A/orom", "Maths", "Amh"],
+                "Thursday": ["HPE", "Eng", "Moral", "Env.sci", "Art", "Amh", "Maths"],
+                "Friday": ["Env.sci", "Spoken", "Art", "Maths", "A/orom", "Maths"]
+            },
+            "4A": {
+                "Monday": ["ICT", "Env.sci", "A/orom", "Eng", "HPE", "Moral", "Maths"],
+                "Tuesday": ["Eng", "Env.sci", "Maths", "Art", "A/orom", "Spoken", "Amh"],
+                "Wednesday": ["Eng", "A/orom", "Env.sci", "HPE", "Moral", "Art", "Maths"],
+                "Thursday": ["Maths", "Scie.En", "Eng", "A/orom", "Amh", "ICT", "Eng"],
+                "Friday": ["Maths", "Maths", "Art", "Spoken", "Env.sci", "Amh"]
+            },
+            "4B": {
+                "Monday": ["Eng", "HPE", "A/orom", "Amh", "Env.sci", "Spoken", "Maths"],
+                "Tuesday": ["Moral", "Maths", "HPE", "Env.sci", "ICT", "Scie.En", "Amh"],
+                "Wednesday": ["Eng", "Amh", "A/orom", "Maths", "Env.sci", "Spoken", "Art"],
+                "Thursday": ["Eng", "Amh", "Maths", "Spoken", "A/orom", "Geda", "Amh"],
+                "Friday": ["A/orom", "Amh", "Maths", "Maths", "Moral", "Env.sci"]
+            },
+            "4C": {
+                "Monday": ["A/orom", "Amh", "Eng", "Moral", "Maths", "Art", "Env.sci"],
+                "Tuesday": ["Amh", "Env.sci", "Eng", "Maths", "HPE", "Moral", "A/orom"],
+                "Wednesday": ["Scie.En", "HPE", "Amh", "ICT", "Eng", "Maths", "Maths"],
+                "Thursday": ["Art", "Spoken", "Env.sci", "Amh", "Maths", "Moral", "Eng"],
+                "Friday": ["Env.sci", "Maths", "Maths", "Art", "Eng", "A/orom"]
+            },
+            "5A": {
+                "Monday": ["Env.sci", "A/orom", "Maths", "Eng", "Amh", "Moral", "Geda"],
+                "Tuesday": ["Geda", "Eng", "Env.sci", "Maths", "A/orom", "Spoken", "HPE"],
+                "Wednesday": ["Eng", "Maths", "A/orom", "Env.sci", "Maths", "Moral", "Art"],
+                "Thursday": ["Eng", "Amh", "Maths", "Scie.En", "Eng", "A/orom", "Moral"],
+                "Friday": ["Eng", "Scie.En", "ICT", "Spoken", "A/orom", "Amh"]
+            },
+            "5B": {
+                "Monday": ["Eng", "Env.sci", "Maths", "Amh", "HPE", "ICT", "Art"],
+                "Tuesday": ["Maths", "A/orom", "Amh", "Eng", "Env.sci", "Maths", "Spoken"],
+                "Wednesday": ["Moral", "Spoken", "Env.sci", "Amh", "HPE", "Maths", "Moral"],
+                "Thursday": ["Maths", "Moral", "Amh", "Maths", "Spoken", "Env.sci", "Amh"],
+                "Friday": ["Amh", "Maths", "Spoken", "Moral", "Env.sci", "Amh"]
+            },
+            "5C": {
+                "Monday": ["Maths", "Art", "Eng", "Scie.En", "A/orom", "Maths"],
+                "Tuesday": ["Amh", "Eng", "Env.sci", "Maths", "HPE", "Moral", "Art"],
+                "Wednesday": ["Env.sci", "Art", "Maths", "Maths", "Moral", "Env.sci", "Art"],
+                "Thursday": ["Maths", "Spoken", "A/orom", "Env.sci", "Geda", "Maths", "Eng"],
+                "Friday": ["Maths", "Maths", "Art", "Eng", "Maths", "HPE"]
+            },
+            "6A": {
+                "Monday": ["Maths", "Env.sci", "A/orom", "ICT", "Maths", "Eng", "Art"],
+                "Tuesday": ["Maths", "A/orom", "Art", "Maths", "Amh", "Eng", "Env.sci"],
+                "Wednesday": ["HPE", "Amh", "A/orom", "Env.sci", "Maths", "Moral", "HPE"],
+                "Thursday": ["Amh", "A/orom", "Env.sci", "Maths", "Moral", "Art", "Eng"],
+                "Friday": ["A/orom", "HPE", "Amh", "A/orom", "Env.sci", "Maths"]
+            },
+            "6B": {
+                "Monday": ["Eng", "A/orom", "Maths", "Moral", "Env.sci", "Amh", "Art"],
+                "Tuesday": ["Maths", "Spoken", "Maths", "HPE", "Env.sci", "Eng", "Art"],
+                "Wednesday": ["Maths", "A/orom", "Maths", "Eng", "Env.sci", "Geda", "Moral"],
+                "Thursday": ["Maths", "Maths", "Art", "Spoken", "Env.sci", "Amh", "Moral"],
+                "Friday": ["Maths", "Maths", "Eng", "Env.sci", "Env.sci", "Amh"]
+            },
+            "7A": {
+                "Monday": ["Maths", "Geda", "S.sci", "Cit.Ship", "ICT", "Amh", "Spoken"],
+                "Tuesday": ["Genera", "ICT", "Vocatio", "Maths", "Geda", "S.sci", "Eng"],
+                "Wednesday": ["Art", "S.sci", "Maths", "Genera", "Cit.Ship", "Eng", "A/orom"],
+                "Thursday": ["Maths", "Eng", "HPE", "Amh", "A/orom", "Scie.En", "Genera"],
+                "Friday": ["A/orom", "Vocati", "Eng", "Genera", "Art", "Maths"]
+            },
+            "7B": {
+                "Monday": ["Maths", "Cit.Ship", "S.sci", "Genera", "Art", "Eng", "A/orom"],
+                "Tuesday": ["Genera", "Maths", "Eng", "Amh", "HPE", "S.sci", "Cit.Ship"],
+                "Wednesday": ["Scie.En", "Art", "ICT", "Eng", "Maths", "Amh", "Vocatio"],
+                "Thursday": ["ICT", "S.sci", "Vocatio", "Cit.Ship", "Genera", "Maths", "Spoken"],
+                "Friday": ["Maths", "A/orom", "S.sci", "Amh", "Eng", "Genera"]
+            },
+            "7C": {
+                "Monday": ["Amh", "Spoken", "Genera", "Art", "Maths", "S.sci", "Cit.Ship"],
+                "Tuesday": ["Maths", "HPE", "Cit.Ship", "Eng", "S.sci", "Genera", "Vocati"],
+                "Wednesday": ["Maths", "Eng", "S.sci", "Genera", "ICT", "Cit.Ship", "Amh"],
+                "Thursday": ["Maths", "A/orom", "Eng", "Scie.En", "ICT", "Vocati", "Amh"],
+                "Friday": ["Genera", "Art", "A/orom", "Maths", "S.sci", "Eng"]
+            },
+            "8A": {
+                "Monday": ["Cit.Ship", "Maths", "Genera", "A/orom", "Eng", "Geda", "ICT"],
+                "Tuesday": ["Eng", "A/orom", "ICT", "Maths", "S.sci", "Spoken", "Genera"],
+                "Wednesday": ["Scie.En", "Genera", "Maths", "Art", "Amh", "Art", "A/orom"],
+                "Thursday": ["Vocati", "Genera", "Cit.Ship", "Geda", "Maths", "Eng", "S.sci"],
+                "Friday": ["Amh", "Maths", "HPE", "Vocatio", "S.sci", "Eng"]
+            },
+            "8B": {
+                "Monday": ["Vocati", "S.sci", "Maths", "Eng", "Scie.En", "Cit.Ship", "Amh"],
+                "Tuesday": ["S.sci", "Amh", "Genera", "Cit.Ship", "Eng", "Maths", "A/orom"],
+                "Wednesday": ["Art", "Maths", "Eng", "A/orom", "S.sci", "ICT", "Genera"],
+                "Thursday": ["Genera", "Genera", "Maths", "S.sci", "Vocati", "Amh", "Eng"],
+                "Friday": ["Cit.Ship", "Spoken", "HPE", "Genera", "Art", "Maths"]
+            }
+        };
+
+        const gradeSectionSelect = document.getElementById('gradeSectionSelect');
+        const timetableContainer = document.getElementById('timetableContainer');
+        const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+        /**
+         * Populates the grade/section dropdown with options from the timetableData.
+         */
+        function populateGradeSectionDropdown() {
+            for (const section in timetableData) {
+                const option = document.createElement('option');
+                option.value = section;
+                option.textContent = section;
+                gradeSectionSelect.appendChild(option);
+            }
+        }
+
+        /**
+         * Displays the timetable for the selected grade/section.
+         * @param {string} selectedGradeSection - The selected grade and section (e.g., "1A").
+         */
+        function displayTimetable(selectedGradeSection) {
+            timetableContainer.innerHTML = ''; // Clear previous timetable
+
+            const timetable = timetableData[selectedGradeSection];
+            if (!timetable) {
+                timetableContainer.innerHTML = '<p>No timetable data found for this section.</p>';
+                return;
+            }
+
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            // Create header row for Period numbers
+            const periodHeaderRow = document.createElement('tr');
+            periodHeaderRow.innerHTML = '<th>Day / Period</th>'; // Empty cell for the day column
+            for (let i = 1; i <= 7; i++) {
+                periodHeaderRow.innerHTML += `<th>${i}</th>`;
+            }
+            thead.appendChild(periodHeaderRow);
+
+            // Create rows for each day
+            daysOfWeek.forEach(day => {
+                const row = document.createElement('tr');
+                const dayHeader = document.createElement('th');
+                dayHeader.textContent = day;
+                row.appendChild(dayHeader);
+
+                const subjects = timetable[day] || [];
+                const maxPeriods = (day === "Friday") ? 6 : 7;
+
+                for (let i = 0; i < maxPeriods; i++) {
+                    const cell = document.createElement('td');
+                    cell.textContent = subjects[i] || ''; // Display subject or empty if none
+                    row.appendChild(cell);
+                }
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            timetableContainer.appendChild(table);
+        }
+
+        // Event listener for dropdown changes
+        gradeSectionSelect.addEventListener('change', (event) => {
+            displayTimetable(event.target.value);
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            populateGradeSectionDropdown();
+            // Display timetable for the first grade/section by default
+            if (gradeSectionSelect.options.length > 0) {
+                displayTimetable(gradeSectionSelect.value);
+            }
+        });
+    </script>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section-container">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>እውቂያ | Quunnamtii</p>
+    </div>
+
+    <div class="contact-wrapper">
+        <!-- Info Box -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <strong>Managing Principal:</strong><br>0471114881
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-school"></i>
+                <div>
+                    <strong>Primary School Principal:</strong><br>0478119704
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <div>
+                    <strong>Admin & Finance:</strong><br>+251258156196
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Secretary (ቢሮ):</strong><br>0472214445
+                </div>
+            </div>
+            <hr>
+            <div style="margin-top:20px;">
+                <a href="https://t.me/your_sos_cpa_channel" class="hero-btn" style="font-size:0.9rem;">Join SOS CPA Channel</a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-box">
+            <h3>Send a Message</h3>
+            <form action="https://formspree.io/f/YOUR_ID_HERE" method="post">
+                <label>Name (ስም)</label>
+                <input type="text" name="name" placeholder="Full Name" required>
+
+                <label>Email (ኢሜይል)</label>
+                <input type="email" name="email" placeholder="example@gmail.com" required>
+
+                <label>Message (መልእክት)</label>
+                <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2025 SOS Jimma Primary. All rights reserved. | አስተያየት: <a href="#contact" style="color: #9ca3af;">ይዲርግብሙኝ</a></p>
+</footer>

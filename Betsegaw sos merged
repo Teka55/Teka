@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOS Jimma Primary | ኤስኦኤስ ጅማ ትምህርት ቤት</title>
+    <title>SOS Jimma Primary school| ኤስኦኤስ ጅማ ትምህርት ቤት</title>
 
     <!-- Google Fonts for professional typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -279,7 +279,7 @@
     <section class="hero">
         <h2>A Loving Home for Every Child</h2>
         <p>Providing quality education and care in Jimma, Ethiopia since 2012.</p>
-        <p><em>የልህቀት ማዕከል | Giddu-gala Barnootaa</em></p>
+        <p><em>የልህቀት ማዕከል | ለህይወት እናስተምራለን | Giddu-gala Barnootaa | jireenyaaf barsifna | we educate for life</em></p>
         <a href="#grades" class="hero-btn">View Classes (ክፍሎች)</a>
     </section>
 
@@ -703,5 +703,6 @@
 
 <!-- FOOTER -->
 <footer>
-    <p>&copy; 2025 SOS Jimma Primary. All rights reserved. | አስተያየት: <a href="#contact" style="color: #9ca3af;">ይዲርግብሙኝ</a></p>
+    <p>&copy; 2025 SOS Jimma Primary. All rights reserved. | አስተያየት: <a href="#contact" style="color: #9ca3af;">ለህይወት እናስተምራለን</a></p>
 </footer>
+

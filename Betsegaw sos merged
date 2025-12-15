@@ -290,9 +290,10 @@
             <p>About Hermann Gmeiner & Our Mission</p>
         </div>
         <div class="about-box">
-            <p><strong>Hermann Gmeiner</strong> was the founder of the SOS Children's Village movement. He dedicated his life to providing a nurturing environment for children in need, ensuring they receive education, love, and care.</p>
+            <p><strong>Hermann Gmeiner</strong> was the founder of the SOS Children's Village movement. He dedicated his life to providing a nurturing environment for children in need, ensuring they receive education, love, and care.Hermann Gmeiner, an Austrian medical student and World War II veteran, founded SOS Children's Villages in 1949 in Imst, Austria, after witnessing the misery of war orphans living in cold, crowded institutional orphanages. Believing that "every big thing comes from small beginnings," Gmeiner rejected the idea of traditional asylums and instead created a model based on a loving family structure. He funded the first village through the "Rice Grain" campaign, asking for very small donations from many people. His vision was built on four pillars: every child receives a caring parent (an SOS mother), biological siblings are kept together, the family lives in their own house, and these houses form a supportive village community.</p>
             <br>
-            <p><strong>SOS Jimma</strong> creates a family-like atmosphere where children can grow and thrive. Our school aims to provide quality education while fostering social and emotional development for students from Grade 1 to Grade 8.</p>
+            <p><strong>SOS Jimma</strong> creates a family-like atmosphere where children can grow and thrive. Our school aims to provide quality education while fostering social and emotional development for students from KG 1 to Grade 12.</p>
+            <p><strong>SOS children village's</strong> As the movement succeeded in Europe, it expanded globally in the 1960s to Asia, Latin America, and Africa to help children affected by poverty and conflict. Gmeiner realized that a loving home was not enough to break the cycle of poverty, so he established SOS Hermann Gmeiner Schools and vocational training centers. Crucially, these schools were designed to educate both the children from the SOS village and children from the local neighborhood, ensuring that orphans were integrated into society rather than isolated. Today, Gmeiner’s legacy spans over 135 countries, providing family-based care and education to millions of children.</p>
         </div>
     </section>
 
@@ -678,8 +679,12 @@
             </div>
             <hr>
             <div style="margin-top:20px;">
-                <a href="https://t.me/your_sos_cpa_channel" class="hero-btn" style="font-size:0.9rem;">Join SOS CPA Channel</a>
-            </div>
+                <a href="https://t.me/your_sos_cpa_channel" class="btn-green" style="font-size:0.9rem;">Join SOS cpa channel</a>
+                </div>
+                </div>
+                <div style="margin-top:20px;">
+                <a href="https://t.me/sosjp" class="btn-green" class="btn-green"><i class="fas fa-users"></i> SOS jimma primary school channel</a>
+             </div>
         </div>
 
         <!-- Contact Form -->

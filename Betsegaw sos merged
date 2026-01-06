@@ -392,175 +392,175 @@
     <script>
         // Manually transcribed timetable data from the image
         const timetableData = {
-            "1A": {
-                "Monday": ["A/orom", "Amh", "Eng", "HPE", "Env.sci", "Scie.En", "Maths"],
-                "Tuesday": ["A/orom", "Amh", "Eng", "HPE", "Geda", "Env.sci", "Eng"],
-                "Wednesday": ["Art", "Maths", "Geda", "Spoken", "Env.sci", "A/orom", "Maths"],
-                "Thursday": ["A/orom", "Amh", "Eng", "Moral", "Eng", "Spoken", "Maths"],
-                "Friday": ["Art", "Maths", "Maths", "Env.sci", "Eng", "Spoken"] // 6 periods for Friday
-            },
-            "1B": {
-                "Monday": ["Env.sci", "Maths", "Amh", "Eng", "Art", "Maths", "Spoken"],
-                "Tuesday": ["Spoken", "Maths", "HPE", "Eng", "A/orom", "Amh", "Moral"],
-                "Wednesday": ["Moral", "Env.sci", "Spoken", "HPE", "Eng", "Env.sci", "Amh"],
-                "Thursday": ["Moral", "HPE", "A/orom", "Maths", "Env.sci", "Scie.En", "Art"],
-                "Friday": ["Amh", "Eng", "HPE", "Maths", "Moral", "Env.sci"]
-            },
-            "1C": {
-                "Monday": ["HPE", "Eng", "Env.sci", "Art", "Moral", "Maths", "Env.sci"],
-                "Tuesday": ["A/orom", "Maths", "Env.sci", "Maths", "A/orom", "Moral", "Eng"],
-                "Wednesday": ["Amh", "Eng", "Amh", "Amh", "Art", "HPE", "Spoken"],
-                "Thursday": ["Eng", "Env.sci", "Eng", "Amh", "Maths", "Scie.En", "Eng"],
-                "Friday": ["A/orom", "Maths", "Env.sci", "Art", "Maths", "Moral"]
-            },
-            "1D": {
-                "Monday": ["Eng", "Env.sci", "Amh", "Maths", "Spoken", "A/orom", "Moral"],
-                "Tuesday": ["Moral", "Moral", "Env.sci", "A/orom", "Geda", "Maths", "Scie.En"],
-                "Wednesday": ["Maths", "Eng", "Env.sci", "Art", "HPE", "Maths", "Spoken"],
-                "Thursday": ["Eng", "Maths", "Eng", "Env.sci", "Art", "HPE", "Maths"],
-                "Friday": ["Amh", "Maths", "Spoken", "A/orom", "Eng", "Maths"]
-            },
-            "2A": {
-                "Monday": ["A/orom", "HPE", "Maths", "Scie.En", "Maths", "Amh", "Eng"],
-                "Tuesday": ["Eng", "Art", "Maths", "Env.sci", "HPE", "Moral", "Spoken"],
-                "Wednesday": ["Env.sci", "Amh", "Maths", "A/orom", "Eng", "Geda", "Eng"],
-                "Thursday": ["A/orom", "Env.sci", "Eng", "Spoken", "Amh", "Maths", "Env.sci"],
-                "Friday": ["Eng", "A/orom", "Maths", "Maths", "Env.sci", "Eng"]
-            },
-            "2B": {
-                "Monday": ["Eng", "Env.sci", "Geda", "Art", "Moral", "Maths", "A/orom"],
-                "Tuesday": ["Maths", "Maths", "Spoken", "Eng", "Maths", "Amh", "Maths"],
-                "Wednesday": ["Env.sci", "Moral", "A/orom", "Spoken", "Env.sci", "Eng", "Moral"],
-                "Thursday": ["Maths", "Eng", "Geda", "Amh", "Maths", "Env.sci", "HPE"],
-                "Friday": ["Eng", "HPE", "Eng", "A/orom", "Maths", "Env.sci"]
-            },
-            "2C": {
-                "Monday": ["Env.sci", "Art", "Amh", "HPE", "Eng", "Maths", "Moral"],
-                "Tuesday": ["Spoken", "Env.sci", "Eng", "Maths", "Amh", "Maths", "Env.sci"],
-                "Wednesday": ["Moral", "Maths", "Spoken", "Env.sci", "A/orom", "Env.sci", "Amh"],
-                "Thursday": ["A/orom", "Amh", "Art", "Eng", "Maths", "HPE", "Amh"],
-                "Friday": ["A/orom", "Art", "Geda", "Maths", "HPE", "Env.sci"]
-            },
-            "2D": {
-                "Monday": ["Maths", "Amh", "Eng", "Maths", "Env.sci", "A/orom", "Art"],
-                "Tuesday": ["HPE", "Art", "HPE", "Maths", "Eng", "Moral", "Amh"],
-                "Wednesday": ["Spoken", "Art", "Env.sci", "Amh", "Maths", "Spoken", "Env.sci"],
-                "Thursday": ["A/orom", "Amh", "Maths", "Moral", "Env.sci", "Eng", "Art"],
-                "Friday": ["Maths", "Amh", "Moral", "Env.sci", "Scie.En", "Amh"]
-            },
-            "3A": {
-                "Monday": ["Geda", "Moral", "Spoken", "Maths", "A/orom", "Env.sci", "Eng"],
-                "Tuesday": ["Amh", "Moral", "A/orom", "Eng", "Env.sci", "Maths", "Maths"],
-                "Wednesday": ["Eng", "HPE", "Maths", "Spoken", "A/orom", "Env.sci", "Art"],
-                "Thursday": ["Maths", "HPE", "Geda", "Env.sci", "A/orom", "ICT", "Eng"],
-                "Friday": ["Amh", "Maths", "Eng", "Scie.En", "Eng", "A/orom"]
-            },
-            "3B": {
-                "Monday": ["Spoken", "HPE", "Maths", "Amh", "Eng", "Env.sci", "A/orom"],
-                "Tuesday": ["Maths", "Amh", "Moral", "Env.sci", "Art", "Eng", "Spoken"],
-                "Wednesday": ["A/orom", "Scie.En", "Env.sci", "Amh", "Maths", "Eng", "Moral"],
-                "Thursday": ["Maths", "HPE", "Env.sci", "Moral", "Amh", "Eng", "Maths"],
-                "Friday": ["ICT", "Eng", "Maths", "Amh", "Env.sci", "Art"]
-            },
-            "3C": {
-                "Monday": ["Amh", "Moral", "HPE", "Env.sci", "Maths", "Spoken", "Eng"],
-                "Tuesday": ["ICT", "Scie.En", "Amh", "Maths", "Maths", "Eng", "HPE"],
-                "Wednesday": ["Env.sci", "Spoken", "Art", "Maths", "A/orom", "Maths", "Amh"],
-                "Thursday": ["HPE", "Eng", "Moral", "Env.sci", "Art", "Amh", "Maths"],
-                "Friday": ["Env.sci", "Spoken", "Art", "Maths", "A/orom", "Maths"]
-            },
-            "4A": {
-                "Monday": ["ICT", "Env.sci", "A/orom", "Eng", "HPE", "Moral", "Maths"],
-                "Tuesday": ["Eng", "Env.sci", "Maths", "Art", "A/orom", "Spoken", "Amh"],
-                "Wednesday": ["Eng", "A/orom", "Env.sci", "HPE", "Moral", "Art", "Maths"],
-                "Thursday": ["Maths", "Scie.En", "Eng", "A/orom", "Amh", "ICT", "Eng"],
-                "Friday": ["Maths", "Maths", "Art", "Spoken", "Env.sci", "Amh"]
-            },
-            "4B": {
-                "Monday": ["Eng", "HPE", "A/orom", "Amh", "Env.sci", "Spoken", "Maths"],
-                "Tuesday": ["Moral", "Maths", "HPE", "Env.sci", "ICT", "Scie.En", "Amh"],
-                "Wednesday": ["Eng", "Amh", "A/orom", "Maths", "Env.sci", "Spoken", "Art"],
-                "Thursday": ["Eng", "Amh", "Maths", "Spoken", "A/orom", "Geda", "Amh"],
-                "Friday": ["A/orom", "Amh", "Maths", "Maths", "Moral", "Env.sci"]
-            },
-            "4C": {
-                "Monday": ["A/orom", "Amh", "Eng", "Moral", "Maths", "Art", "Env.sci"],
-                "Tuesday": ["Amh", "Env.sci", "Eng", "Maths", "HPE", "Moral", "A/orom"],
-                "Wednesday": ["Scie.En", "HPE", "Amh", "ICT", "Eng", "Maths", "Maths"],
-                "Thursday": ["Art", "Spoken", "Env.sci", "Amh", "Maths", "Moral", "Eng"],
-                "Friday": ["Env.sci", "Maths", "Maths", "Art", "Eng", "A/orom"]
-            },
-            "5A": {
-                "Monday": ["Env.sci", "A/orom", "Maths", "Eng", "Amh", "Moral", "Geda"],
-                "Tuesday": ["Geda", "Eng", "Env.sci", "Maths", "A/orom", "Spoken", "HPE"],
-                "Wednesday": ["Eng", "Maths", "A/orom", "Env.sci", "Maths", "Moral", "Art"],
-                "Thursday": ["Eng", "Amh", "Maths", "Scie.En", "Eng", "A/orom", "Moral"],
-                "Friday": ["Eng", "Scie.En", "ICT", "Spoken", "A/orom", "Amh"]
-            },
-            "5B": {
-                "Monday": ["Eng", "Env.sci", "Maths", "Amh", "HPE", "ICT", "Art"],
-                "Tuesday": ["Maths", "A/orom", "Amh", "Eng", "Env.sci", "Maths", "Spoken"],
-                "Wednesday": ["Moral", "Spoken", "Env.sci", "Amh", "HPE", "Maths", "Moral"],
-                "Thursday": ["Maths", "Moral", "Amh", "Maths", "Spoken", "Env.sci", "Amh"],
-                "Friday": ["Amh", "Maths", "Spoken", "Moral", "Env.sci", "Amh"]
-            },
-            "5C": {
-                "Monday": ["Maths", "Art", "Eng", "Scie.En", "A/orom", "Maths"],
-                "Tuesday": ["Amh", "Eng", "Env.sci", "Maths", "HPE", "Moral", "Art"],
-                "Wednesday": ["Env.sci", "Art", "Maths", "Maths", "Moral", "Env.sci", "Art"],
-                "Thursday": ["Maths", "Spoken", "A/orom", "Env.sci", "Geda", "Maths", "Eng"],
-                "Friday": ["Maths", "Maths", "Art", "Eng", "Maths", "HPE"]
-            },
-            "6A": {
-                "Monday": ["Maths", "Env.sci", "A/orom", "ICT", "Maths", "Eng", "Art"],
-                "Tuesday": ["Maths", "A/orom", "Art", "Maths", "Amh", "Eng", "Env.sci"],
-                "Wednesday": ["HPE", "Amh", "A/orom", "Env.sci", "Maths", "Moral", "HPE"],
-                "Thursday": ["Amh", "A/orom", "Env.sci", "Maths", "Moral", "Art", "Eng"],
-                "Friday": ["A/orom", "HPE", "Amh", "A/orom", "Env.sci", "Maths"]
-            },
-            "6B": {
-                "Monday": ["Eng", "A/orom", "Maths", "Moral", "Env.sci", "Amh", "Art"],
-                "Tuesday": ["Maths", "Spoken", "Maths", "HPE", "Env.sci", "Eng", "Art"],
-                "Wednesday": ["Maths", "A/orom", "Maths", "Eng", "Env.sci", "Geda", "Moral"],
-                "Thursday": ["Maths", "Maths", "Art", "Spoken", "Env.sci", "Amh", "Moral"],
-                "Friday": ["Maths", "Maths", "Eng", "Env.sci", "Env.sci", "Amh"]
-            },
-            "7A": {
-                "Monday": ["Maths", "Geda", "S.sci", "Cit.Ship", "ICT", "Amh", "Spoken"],
-                "Tuesday": ["Genera", "ICT", "Vocatio", "Maths", "Geda", "S.sci", "Eng"],
-                "Wednesday": ["Art", "S.sci", "Maths", "Genera", "Cit.Ship", "Eng", "A/orom"],
-                "Thursday": ["Maths", "Eng", "HPE", "Amh", "A/orom", "Scie.En", "Genera"],
-                "Friday": ["A/orom", "Vocati", "Eng", "Genera", "Art", "Maths"]
-            },
-            "7B": {
-                "Monday": ["Maths", "Cit.Ship", "S.sci", "Genera", "Art", "Eng", "A/orom"],
-                "Tuesday": ["Genera", "Maths", "Eng", "Amh", "HPE", "S.sci", "Cit.Ship"],
-                "Wednesday": ["Scie.En", "Art", "ICT", "Eng", "Maths", "Amh", "Vocatio"],
-                "Thursday": ["ICT", "S.sci", "Vocatio", "Cit.Ship", "Genera", "Maths", "Spoken"],
-                "Friday": ["Maths", "A/orom", "S.sci", "Amh", "Eng", "Genera"]
-            },
-            "7C": {
-                "Monday": ["Amh", "Spoken", "Genera", "Art", "Maths", "S.sci", "Cit.Ship"],
-                "Tuesday": ["Maths", "HPE", "Cit.Ship", "Eng", "S.sci", "Genera", "Vocati"],
-                "Wednesday": ["Maths", "Eng", "S.sci", "Genera", "ICT", "Cit.Ship", "Amh"],
-                "Thursday": ["Maths", "A/orom", "Eng", "Scie.En", "ICT", "Vocati", "Amh"],
-                "Friday": ["Genera", "Art", "A/orom", "Maths", "S.sci", "Eng"]
-            },
-            "8A": {
-                "Monday": ["Cit.Ship", "Maths", "Genera", "A/orom", "Eng", "Geda", "ICT"],
-                "Tuesday": ["Eng", "A/orom", "ICT", "Maths", "S.sci", "Spoken", "Genera"],
-                "Wednesday": ["Scie.En", "Genera", "Maths", "Art", "Amh", "Art", "A/orom"],
-                "Thursday": ["Vocati", "Genera", "Cit.Ship", "Geda", "Maths", "Eng", "S.sci"],
-                "Friday": ["Amh", "Maths", "HPE", "Vocatio", "S.sci", "Eng"]
-            },
-            "8B": {
-                "Monday": ["Vocati", "S.sci", "Maths", "Eng", "Scie.En", "Cit.Ship", "Amh"],
-                "Tuesday": ["S.sci", "Amh", "Genera", "Cit.Ship", "Eng", "Maths", "A/orom"],
-                "Wednesday": ["Art", "Maths", "Eng", "A/orom", "S.sci", "ICT", "Genera"],
-                "Thursday": ["Genera", "Genera", "Maths", "S.sci", "Vocati", "Amh", "Eng"],
-                "Friday": ["Cit.Ship", "Spoken", "HPE", "Genera", "Art", "Maths"]
-            }
-        };
+"1A": {
+    "Monday": ["A/orom", "Amh", "Eng", "HPE", "Env.sci", "Scie.En", "Maths"],
+    "Tuesday": ["A/orom", "HPE", "Geda", "Env.sci", "Eng", "Art", "Maths"],
+    "Wednesday": ["Maths", "Geda", "Spoken", "Scie.En", "A/orom", "Moral", "Eng"],
+    "Thursday": ["Env.sci", "A/orom", "Amh", "Moral", "Eng", "Spoken", "Maths"],
+    "Friday": ["Art", "Eng", "A/orom", "Maths.", "Maths", "Env.sci"]
+  },
+  "1B": {
+    "Monday": ["Env.sci", "Maths", "Amh", "Maths.", "Eng", "Art", "Spoken"],
+    "Tuesday": ["Maths", "Eng", "A/orom", "Art", "Amh", "Moral", "Env.sci"],
+    "Wednesday": ["Spoken", "Env.sci", "Eng", "Amh", "Maths", "Moral", "HPE"],
+    "Thursday": ["A/orom", "Maths", "Env.sci", "Scie.En", "Art", "Amh", "Eng"],
+    "Friday": ["HPE", "Amh", "Maths", "Moral", "Env.sci", "Eng"]
+  },
+  "1C": {
+    "Monday": ["HPE", "Eng", "Env.sci", "Art", "Amh", "Moral", "Maths"],
+    "Tuesday": ["Env.sci", "Maths", "Moral", "Spoken", "A/orom", "Eng", "Amh"],
+    "Wednesday": ["Amh", "Art", "HPE", "Spoken", "Eng", "Env.sci", "Amh"],
+    "Thursday": ["Amh", "Scie.En", "Eng", "A/orom", "Maths", "Env.sci", "Art"],
+    "Friday": ["Maths", "Moral", "Eng", "Env.sci", "Maths.", "Amh"]
+  },
+  "1D": {
+    "Monday": ["Eng", "Env.sci", "Amh", "Maths", "Spoken", "A/orom", "Moral"],
+    "Tuesday": ["Moral", "Env.sci", "A/orom", "Geda", "Maths", "Scie.En", "Eng"],
+    "Wednesday": ["Env.sci", "Amh", "Maths.", "A/orom", "Geda", "Eng", "Maths"],
+    "Thursday": ["Eng", "Env.sci", "Art", "HPE", "Maths", "Spoken", "A/orom"],
+    "Friday": ["Eng", "Env.sci", "Art", "HPE", "A/orom", "Maths"]
+  },
+  "2A": {
+    "Monday": ["A/orom", "HPE", "Maths", "Scie.En", "Maths.", "Amh", "Eng"],
+    "Tuesday": ["Eng", "Art", "Maths", "Env.sci", "HPE", "Moral", "A/orom"],
+    "Wednesday": ["Spoken", "Eng", "Env.sci", "Moral", "Maths", "A/orom", "Env.sci"],
+    "Thursday": ["Eng", "Spoken", "Amh", "Maths", "Env.sci", "A/orom", "Geda"],
+    "Friday": ["Maths", "Env.sci", "A/orom", "Art", "Geda", "Eng"]
+  },
+  "2B": {
+    "Monday": ["Eng", "Env.sci", "Geda", "Art", "Moral", "Maths", "A/orom"],
+    "Tuesday": ["Maths", "Spoken", "Scie.En", "Maths.", "A/orom", "Env.sci", "Eng"],
+    "Wednesday": ["A/orom", "Moral", "Amh", "Maths", "Spoken", "Env.sci", "Eng"],
+    "Thursday": ["Geda", "Amh", "Maths", "Env.sci", "HPE", "Eng", "A/orom"],
+    "Friday": ["Art", "Eng", "Maths", "A/orom", "HPE", "Env.sci"]
+  },
+  "2C": {
+    "Monday": ["Env.sci", "Art", "Amh", "HPE", "Eng", "Maths", "Moral"],
+    "Tuesday": ["Spoken", "Eng", "Maths", "Amh", "Maths", "Env.sci", "Art"],
+    "Wednesday": ["Spoken", "Moral", "Maths", "Eng", "Env.sci", "A/orom", "Amh"],
+    "Thursday": ["Art", "Env.sci", "Eng", "Maths", "HPE", "Amh", "Moral"],
+    "Friday": ["Env.sci", "Scie.En", "Eng", "A/orom", "Amh", "Maths"]
+  },
+  "2D": {
+    "Monday": ["Maths", "Amh", "Eng", "Maths", "Env.sci", "A/orom", "Art"],
+    "Tuesday": ["HPE", "Maths", "Eng", "Moral", "Amh", "Spoken", "Env.sci"],
+    "Wednesday": ["Env.sci", "Spoken", "Eng", "HPE", "Art", "Amh", "Maths"],
+    "Thursday": ["Moral", "Maths.", "Env.sci", "Eng", "A/orom", "Scie.En", "Amh"],
+    "Friday": ["Moral", "Art", "Env.sci", "Eng", "Maths", "Amh"]
+  },
+  "3A": {
+    "Monday": ["Geda", "Moral", "Spoken", "Maths", "A/orom", "Env.sci", "Eng"],
+    "Tuesday": ["Amh", "Moral", "A/orom", "Eng", "Env.sci", "Maths", "Maths"],
+    "Wednesday": ["Eng", "HPE", "Maths", "Spoken", "A/orom", "Env.sci", "Art"],
+    "Thursday": ["Maths", "HPE", "Geda", "Env.sci", "A/orom", "ICT", "Eng"],
+    "Friday": ["A/orom", "Art", "Amh", "Maths", "Eng", "Scie.En"]
+  },
+  "3B": {
+    "Monday": ["Spoken", "HPE", "Maths", "Amh", "Eng", "Env.sci", "A/orom"],
+    "Tuesday": ["Maths", "Amh", "Moral", "Env.sci", "Art", "Eng", "Spoken"],
+    "Wednesday": ["A/orom", "Scie.En", "Env.sci", "Amh", "Maths", "Eng", "Moral"],
+    "Thursday": ["Maths.", "HPE", "Env.sci", "Moral", "Amh", "Eng", "Maths"],
+    "Friday": ["Eng", "ICT", "Maths", "Amh", "Env.sci", "Art"]
+  },
+  "3C": {
+    "Monday": ["Amh", "Moral", "HPE", "Env.sci", "Maths", "Spoken", "Eng"],
+    "Tuesday": ["Moral", "Env.sci", "Eng", "ICT", "Scie.En", "Amh", "Maths"],
+    "Wednesday": ["Maths", "Eng", "Art", "Maths", "Env.sci", "Amh", "A/orom"],
+    "Thursday": ["Amh", "Eng", "Env.sci", "Spoken", "Art", "Maths", "A/orom"],
+    "Friday": ["Maths", "Amh", "HPE", "Eng", "Moral", "Env.sci"]
+  },
+  "4A": {
+    "Monday": ["ICT", "Env.sci", "A/orom", "Eng", "HPE", "Moral", "Maths"],
+    "Tuesday": ["Eng", "Env.sci", "Maths", "Art", "A/orom", "Spoken", "Amh"],
+    "Wednesday": ["Art", "Eng", "A/orom", "Env.sci", "HPE", "Moral", "Maths"],
+    "Thursday": ["Scie.En", "Eng", "Maths.", "Spoken", "A/orom", "Geda", "Maths"],
+    "Friday": ["A/orom", "Amh", "Geda", "Eng", "Env.sci", "Maths"]
+  },
+  "4B": {
+    "Monday": ["Eng", "HPE", "A/orom", "Amh", "Env.sci", "Spoken", "Maths"],
+    "Tuesday": ["Moral", "Amh", "Spoken", "Env.sci", "Eng", "Art", "Maths"],
+    "Wednesday": ["Maths", "Moral", "Env.sci", "Art", "Env.sci", "Eng", "Amh"],
+    "Thursday": ["Maths", "ICT", "Amh", "Scie.En", "Eng", "A/orom", "Maths."],
+    "Friday": ["Maths", "Moral", "Eng", "Env.sci", "HPE", "Amh"]
+  },
+  "4C": {
+    "Monday": ["A/orom", "Amh", "Eng", "Moral", "Maths", "Art", "Env.sci"],
+    "Tuesday": ["Amh", "Env.sci", "Maths", "HPE", "Moral", "A/orom", "Eng"],
+    "Wednesday": ["Scie.En", "HPE", "Amh", "ICT", "Eng", "Maths", "Maths."],
+    "Thursday": ["Art", "Spoken", "Env.sci", "Amh", "Maths", "Moral", "Eng"],
+    "Friday": ["Env.sci", "Env.sci", "Amh", "Spoken", "Maths", "Eng"]
+  },
+  "5A": {
+    "Monday": ["Env.sci", "A/orom", "Maths", "Eng", "Amh", "Moral", "Geda"],
+    "Tuesday": ["Geda", "Eng", "Env.sci", "Maths", "A/orom", "Spoken", "HPE"],
+    "Wednesday": ["Env.sci", "Maths", "Art", "Eng", "Maths", "A/orom", " HPE "],
+    "Thursday": ["Amh", "A/orom", "Env.sci", "Maths", "Moral", "Art", "Eng"],
+    "Friday": ["Maths", "Eng", "Scie.En", "ICT", "Spoken", "A/orom"]
+  },
+  "5B": {
+    "Monday": ["Eng", "Env.sci", "Maths", "Amh", "HPE", "ICT", "Art"],
+    "Tuesday": ["Maths", "A/orom", "Art", "Maths.", "Amh", "Eng", "Env.sci"],
+    "Wednesday": ["Art", "Eng", "Maths", " Moral ", "Spoken", "Env.sci", "Amh"],
+    "Thursday": ["HPE", "Maths", "Moral", "Amh", "Scie.En", "Eng", "A/orom"],
+    "Friday": ["Eng", "Amh", "Maths", "Spoken", "Moral", "Env.sci"]
+  },
+  "5C": {
+    "Monday": ["Maths", "Art", "Eng", "Scie.En", "A/orom", "Maths.", "Amh"],
+    "Tuesday": ["Eng", "Amh", "HPE", "A/orom", "Env.sci", "Maths", "Spoken"],
+    "Wednesday": ["Eng", "ICT", "HPE", "Maths", "Moral", "Amh", "Env.sci"],
+    "Thursday": ["Eng", "Art", "Maths", "Spoken", "Moral", "Amh", "Env.sci"],
+    "Friday": ["Amh", "Art", "Eng", "Maths", "Env.sci", "Moral"]
+  },
+  "6A": {
+    "Monday": ["Maths", "Env.sci", "A/orom", "ICT", "Maths.", "Eng", "Art"],
+    "Tuesday": ["Maths", "A/orom", "Eng", "Env.sci", "Amh", "Geda", "Moral"],
+    "Wednesday": ["Maths", "Eng", "HPE", "Env.sci", "Spoken", "Geda", "A/orom"],
+    "Thursday": ["A/orom", "Amh", "Spoken", "Art", "Scie.En", "Maths", "Eng"],
+    "Friday": ["HPE", "Maths", "Env.sci", "Eng", "Moral", "A/orom"]
+  },
+  "6B": {
+    "Monday": ["Eng", "A/orom", "Maths", "Moral", "Env.sci", "Amh", "Art"],
+    "Tuesday": ["Env.sci", "HPE", "Amh", "Moral", "Eng", "Maths", "Spoken"],
+    "Wednesday": ["Maths", "HPE", "Env.sci", "Eng", "Art", "Spoken", "Amh"],
+    "Thursday": ["Env.sci", "A/orom", "Maths", "ICT", "Eng", "Maths", "Amh"],
+    "Friday": ["Scie.En", "Eng", "Art", "Maths", "Amh", "Moral"]
+  },
+  "7A": {
+    "Monday": ["Maths", "Geda", "S.sci", "Cit.Ship", "ICT", "Amh", "Spoken"],
+    "Tuesday": ["Genera", "ICT", "Vocatio", "Maths", "Geda", "S.sci", "Eng"],
+    "Wednesday": ["Art", "S.sci", "Maths", "Genera", "Cit.Ship", "Eng", "A/orom"],
+    "Thursday": ["Maths", "Eng", "HPE", "Amh", "A/orom", "Scie.En", "Genera"],
+    "Friday": ["A/orom", "Vocati", "Eng", "Genera", "Art", "Maths"]
+  },
+  "7B": {
+    "Monday": ["Maths", "Cit.Ship", "S.sci", "Genera", "Art", "Eng", "A/orom"],
+    "Tuesday": ["Genera", "Maths.", "Eng", "Amh", "HPE", "S.sci", "Cit.Ship"],
+    "Wednesday": ["Scie.En", "Art", "ICT", "Eng", "Maths", "Amh", "Vocatio"],
+    "Thursday": ["ICT", "S.sci", "Vocatio", "Cit.Ship", "Genera", "Maths", "Spoken"],
+    "Friday": ["Maths", "A/orom", "S.sci", "Amh", "Eng", "Genera"]
+  },
+  "7C": {
+    "Monday": ["Amh", "Spoken", "Genera", "Art", "Maths", "S.sci", "Cit.Ship"],
+    "Tuesday": ["Maths.", "HPE", "Cit.Ship", "Eng", "S.sci", "Genera", "Vocati"],
+    "Wednesday": ["Maths", "Eng", "S.sci", "Genera", "ICT", "Cit.Ship", "Amh"],
+    "Thursday": ["Maths", "A/orom", "Eng", "Scie.En", "ICT", "Vocati", "Amh"],
+    "Friday": ["Genera", "Art", "A/orom", "Maths", "S.sci", "Eng"]
+  },
+  "8A": {
+    "Monday": ["Cit.Ship", "Maths.", "Genera", "A/orom", "Eng", "Geda", "ICT"],
+    "Tuesday": ["Eng", "A/orom", "ICT", "Maths", "S.sci", "Spoken", "Genera"],
+    "Wednesday": ["Scie.En", "Genera", "Maths", "Art", "Amh", "Art", "A/orom"],
+    "Thursday": ["Vocati", "Genera", "Cit.Ship", "Geda", "Maths", "Eng", "S.sci"],
+    "Friday": ["Amh", "Maths", "HPE", "Vocatio", "S.sci", "Eng"]
+  },
+  "8B": {
+    "Monday": ["Vocati", "S.sci", "Maths.", "Eng", "Scie.En", "Cit.Ship", "Amh"],
+    "Tuesday": ["S.sci", "Amh", "Genera", "Cit.Ship", "Eng", "Maths", "A/orom"],
+    "Wednesday": ["Art", "Maths", "Eng", "A/orom", "S.sci", "ICT", "Genera"],
+    "Thursday": ["Genera", "Maths", "S.sci", "Vocati", "Amh", "Eng", "Cit.Ship"],
+    "Friday": ["Spoken", "HPE", "Genera", "Art", "Maths", "ICT"]
+  }
+};
 
         const gradeSectionSelect = document.getElementById('gradeSectionSelect');
         const timetableContainer = document.getElementById('timetableContainer');

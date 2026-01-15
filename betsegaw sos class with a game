@@ -1,0 +1,1102 @@
+Teka Tesfaye, [1/14/2026 10:05 PM]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SOS Jimma Primary school| ኤስኦኤስ ጅማ ትምህርት ቤት</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           1. SCHOOL WEBSITE STYLES
+           ========================================= */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Lock scroll when game is open */
+        body.game-active { overflow: hidden; }
+
+        a { text-decoration: none; }
+        ul { list-style: none; padding: 0; }
+
+        /* HEADER */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px; margin: auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 20px;
+        }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area img { height: 60px; width: auto; }
+        .logo-text h1 { font-size: 1.5rem; color: #1e40af; margin: 0; font-weight: 800; }
+        .logo-text span { font-size: 0.8rem; color: #666; display: block; }
+
+        nav ul { display: flex; gap: 20px; align-items: center; }
+        nav a { color: #333; font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
+        nav a:hover { color: #1e40af; }
+
+        /* Brain Gym Link Style */
+        .nav-game-link {
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .nav-game-link:hover { transform: scale(1.05); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white; text-align: center; padding: 80px 20px;
+        }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 30px auto; }
+        .hero-btn {
+            background: white; color: #1e40af; padding: 12px 30px;
+            border-radius: 30px; font-weight: bold; transition: transform 0.3s;
+            display: inline-block; cursor: pointer; border: none; font-size: 1rem; margin: 5px;
+        }
+        .hero-btn:hover { transform: scale(1.05); background: #f0f9ff; }
+        .hero-btn.game-btn { background: #ff0076; color: white; }
+
+        .section-container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: #1e40af; font-size: 2rem; margin-bottom: 10px; }
+
+        /* GRADES GRID */
+        .grades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .grade-card {
+            background: white; border-radius: 12px; padding: 25px; text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s;
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+            border-top: 4px solid #3b82f6;
+        }
+        .grade-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .grade-number { font-size: 2rem; font-weight: bold; color: #1e40af; margin-bottom: 5px; }
+        .grade-links a { display: block; margin-top: 10px; padding: 8px; border-radius: 5px; font-size: 0.9rem; transition: background 0.3s; }
+        .grade-links a:hover { opacity: 0.8; }
+        .btn-blue { background: #eff6ff; color: #1e40af; }
+        .btn-green { background: #ecfdf5; color: #059669; }
+
+        /* TIMETABLE STYLES */
+        .timetable-container { margin-top: 40px; border: 1px solid #ddd; border-radius: 10px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; min-width: 600px; }
+        th, td { border: 1px solid #e0e0e0; padding: 12px 8px; text-align: center; font-size: 0.95em; }
+        thead th { background-color: #34495e; color: #ffffff; }
+        tbody tr:nth-child(even) { background-color: #f8f8f8; }
+        tbody tr:hover { background-color: #e9f7fe; }
+        .selection-area { margin-bottom: 20px; text-align: center; }
+        select { padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; }
+
+        /* CONTACT SECTION */
+        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 30px; }
+        .contact-info, .contact-form-box {
+            flex: 1; min-width: 300px; background: white; padding: 30px;
+            border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .info-item { margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; }
+        .info-item i { color: #1e40af; font-size: 1.2rem; margin-top: 4px; }
+        input[type="text"], input[type="email"], textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        button[type="submit"] { background: #1e40af; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; width: 100%; }
+        button[type="submit"]:hover { background: #1e3a8a; }
+
+        footer { background: #111827; color: #9ca3af; text-align: center; padding: 40px 20px; margin-top: 80px; }
+        footer p { margin: 5px 0; }
+
+        /* =========================================
+           2. BRAIN GYM OVERLAY STYLES
+           ========================================= */
+        #gym-modal {
+            display: none; /* Hidden by default */
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 9999;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            justify-content: center; align-items: center;
+            overflow-y: auto;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Scoped Game Styles */
+        .gym-scope {
+            width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center; padding: 15px;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --primary: #00d2ff; --secondary: #3a7bd5; --accent: #ff0076;
+            --success: #00b09b; --warning: #f7b731;
+        }
+
+        .gym-scope * { box-sizing: border-box; user-select: none; color: white; }
+
+        .gym-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            width: 100%; max-width: 500px;
+            border-radius: 28px; padding: 25px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            position: relative; display: flex; flex-direction: column;
+            min-height: 600px;
+        }
+
+        .hud {
+            display: flex; justify-content: space-between;
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+            background: rgba(0,0,0,0.3); padding: 12px 20px;
+            border-radius: 50px; margin-bottom: 25px;
+            font-weight: 800; border: 1px solid var(--glass-border); font-size: 1.1rem;
+        }
+        .hud div { display: flex; align-items: center; gap: 8px; }
+        .heart-icon { color: var(--accent); }
+        .coin-icon { color: var(--warning); }
+
+        .gym-h1 {
+            text-align: center; font-weight: 900; font-size: 2.5rem; margin-bottom: 5px;
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .gym-subtitle { text-align: center; color: #a0a0a0; margin-bottom: 30px; font-size: 0.9rem; letter-spacing: 1px; }
+
+        .gym-grid-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+        .gym-menu-card {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            border-radius: 20px; padding: 25px 15px; text-align: center;
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            cursor: pointer; transition: 0.3s;
+        }
+        .gym-menu-card:hover { background: rgba(255,255,255,0.1); border-color: var(--primary); transform: translateY(-5px); }
+        .gym-menu-card i { font-size: 2rem; margin-bottom: 5px; }
+
+        .gym-screen { display: none; flex-direction: column; height: 100%; flex-grow: 1; animation: fadeIn 0.4s ease forwards; }
+        .gym-screen.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .timer-track { height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; overflow: hidden; }
+        .timer-fill { height: 100%; width: 100%; background: linear-gradient(90deg, var(--success), var(--warning), var(--accent)); transition: width 0.1s linear; }
+
+        .gym-q-box {
+            background: rgba(0,0,0,0.2); padding: 30px; border-radius: 20px;
+            text-align: center; margin-bottom: 20px; border: 1px solid var(--glass-border);
+            flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .big-text { font-size: 2.8rem; font-weight: 800; margin: 10px 0; text-shadow: 0 0 20px rgba(0,210,255,0.3); }
+
+        .gym-input {
+            width: 100%; padding: 18px; background: rgba(255,255,255,0.1);
+            border: 2px solid var(--glass-border); border-radius: 15px; color: white;
+            font-size: 1.5rem; text-align: center; outline: none; margin-bottom: 15px;
+        }
+        .btn-gym-main {
+            width: 100%; padding: 18px; border-radius: 15px; border: none; cursor: pointer;
+            font-weight: 800; font-size: 1.2rem; color: #fff;
+            background: linear-gradient(45deg, var(--secondary), var(--primary)); margin-bottom: 10px;
+        }
+        .btn-gym-back { background: transparent; border: 1px solid var(--glass-border); color: #aaa; padding: 12px; border-radius: 12px; margin-top: auto; cursor: pointer; width: 100%; }
+        
+        .close-gym-btn {
+            position: absolute; top: 20px; right: 20px;
+            background: rgba(255,0,0,0.2); border: 1px solid rgba(255,0,0,0.5);
+            color: white; padding: 10px 15px; border-radius: 50%; cursor: pointer; z-index: 100;
+        }
+
+        .mem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+        .mem-card {
+            aspect-ratio: 1; background: rgba(255,255,255,0.1); border-radius: 12px;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 2rem; cursor: pointer; transition: 0.4s;
+            transform-style: preserve-3d; border: 1px solid transparent;
+        }
+        .mem-card.flipped { background: #fff; transform: rotateY(180deg); border-color: var(--primary); }
+        .mem-card span { display: none; }
+        .mem-card.flipped span { display: block; transform: rotateY(180deg); }
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+        .stroop-word { font-size: 4rem; font-weight: 900; margin: 40px 0; letter-spacing: 2px; text-transform: uppercase; }
+        .color-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+        .color-btn { padding: 25px; border-radius: 15px; color: white; font-weight: 800; font-size: 1rem; border: none; cursor: pointer; }
+
+        .shop-modal-inner {
+            position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(15, 12, 41, 0.98); z-index: 100;
+            display: none; flex-direction: column; padding: 30px;
+            align-items: center; justify-content: center;
+        }
+        .shop-item {
+            width: 100%; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px;
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .feedback-overlay {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 4rem; font-weight: 900; opacity: 0; pointer-events: none;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.5); z-index: 50; transition: 0.3s;
+        }
+        .feed-correct { color: var(--success); }
+        .feed-wrong { color: var(--accent); }
+
+    </style>
+</head>
+<body id="home">
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnha5yr1-WJPNyTLxS1IX_aFxntO1R13UT8Fu0hBkgQ&s" alt="SOS Logo">
+                <div class="logo-text">
+                    <h1>SOS Jimma Primary School</h1>
+                    <span>ኤስኦኤስ ጅማ ትምህርት ቤት | Hermann Gmeiner School</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#grades">Classes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- Added Brain Gym Button to Nav -->
+                    <li><a href="#" class="nav-game-link" onclick="openGame()"><i class="fas fa-gamepad"></i> Brain Gym</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Welcome) -->
+    <section class="hero">
+        <h2>A Loving Home for Every Child</h2>
+        <p>Providing quality education and care in Jimma, Ethiopia since 2012.</p>
+        <p><em>የልህቀት ማዕከል | ለህይወት እናስተምራለን | Giddu-gala Barnootaa | jireenyaaf barsifna | we educate for life</em></p>
+        <div>
+            <a href="#grades" class="hero-btn">View Classes (ክፍሎች)</a>
+            <button onclick="openGame()" class="hero-btn game-btn">Play Brain Gym</button>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-container">
+        <div class="section-title">
+            <h2>Our History</h2>
+            <p>About Hermann Gmeiner & Our Mission</p>
+        </div>
+        <div class="about-box">
+            <p><strong>Hermann Gmeiner</strong> was the founder of the SOS Children's Village movement. He dedicated his life to providing a nurturing environment for children in need, ensuring they receive education, love, and care.Hermann Gmeiner, an Austrian medical student and World War II veteran, founded SOS Children's Villages in 1949 in Imst, Austria, after witnessing the misery of war orphans living in cold, crowded institutional orphanages. Believing that "every big thing comes from small beginnings," Gmeiner rejected the idea of traditional asylums and instead created a model based on a loving family structure. He funded the first village through the "Rice Grain" campaign, asking for very small donations from many people. His vision was built on four pillars: every child receives a caring parent (an SOS mother), biological siblings are kept together, the family lives in their own house, and these houses form a supportive village community.</p>
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+            <br>
+            <p><strong>SOS Jimma</strong> creates a family-like atmosphere where children can grow and thrive. Our school aims to provide quality education while fostering social and emotional development for students from KG 1 to Grade 12.</p>
+            <p><strong>SOS children village's</strong> As the movement succeeded in Europe, it expanded globally in the 1960s to Asia, Latin America, and Africa to help children affected by poverty and conflict. Gmeiner realized that a loving home was not enough to break the cycle of poverty, so he established SOS Hermann Gmeiner Schools and vocational training centers. Crucially, these schools were designed to educate both the children from the SOS village and children from the local neighborhood, ensuring that orphans were integrated into society rather than isolated. Today, Gmeiner’s legacy spans over 135 countries, providing family-based care and education to millions of children.</p>
+        </div>
+    </section>
+
+    <!-- GRADES SECTION -->
+    <section id="grades" class="section-container">
+        <div class="section-title">
+            <h2>Our Classes</h2>
+            <p>Telegram Channels & Parent Groups</p>
+        </div>
+        
+        <div class="grades-grid">
+            <!-- Grade Cards (1-8) -->
+            <div class="grade-card">
+                <div class="grade-number">Grade 1</div>
+                <div>75 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/+gr6zys9V8JEyMGJk" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g1parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 2</div>
+                <div>68 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/+dF6uITgd-2UzNjJk" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g2parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 3</div>
+                <div>80 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/+gr6zys9V8JEyMGJk" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g3parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 4</div>
+                <div>72 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg1" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g4parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 5</div>
+                <div>65 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/sosjimmakg2" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g5parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 6</div>
+                <div>70 Students</div>
+                <div class="grade-links">
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                    <a href=" https://t.me/sosjimmakg3" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g6parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 7</div>
+                <div>60 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/mihresosg1" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g7parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+            <div class="grade-card">
+                <div class="grade-number">Grade 8</div>
+                <div>55 Students</div>
+                <div class="grade-links">
+                    <a href="https://t.me/+Mn8Vc7JEP8FlMGJk" class="btn-blue"><i class="fab fa-telegram"></i> Join Channel</a>
+                    <a href="https://t.me/sosjimma_g8parents" class="btn-green"><i class="fas fa-users"></i> Parent Group</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMETABLE SECTION -->
+    <section class="section-container">
+        <div class="section-title">
+            <h2>Weekly Subject Outline for Grades 1 to 8</h2>
+        </div>
+        
+        <div class="selection-area">
+            <label for="gradeSectionSelect">Select Grade & Section:</label>
+            <select id="gradeSectionSelect"></select>
+        </div>
+
+        <div id="timetableContainer" class="timetable-container">
+            <!-- Timetable will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>እውቂያ | Quunnamtii</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <!-- Info Box -->
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Managing Principal:</strong><br>0471114881
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-school"></i>
+                    <div>
+                        <strong>Primary School Principal:</strong><br>0478119704
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <div>
+                        <strong>Admin & Finance:</strong><br>+251258156196
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Secretary (ቢሮ):</strong><br>0472214445
+                    </div>
+                </div>
+                <hr>
+                <div style="margin-top:20px;">
+                    <a href="https://t.me/your_sos_cpa_channel" class="btn-green" style="font-size:0.9rem;">Join SOS cpa channel</a>
+                    </div>
+                    <div style="margin-top:20px;">
+                    <a href="https://t.me/sosjp" class="btn-green" class="btn-green"><i class="fas fa-users"></i> SOS jimma primary school channel</a>
+                 </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-box">
+                <h3>Send a Message</h3>
+                <form action="https://formspree.io/f/YOUR_ID_HERE" method="post">
+                    <label>Name (ስም)</label>
+                    <input type="text" name="name" placeholder="Full Name" required>
+
+                    <label>Email (ኢሜይል)</label>
+                    <input type="email" name="email" placeholder="example@gmail.com" required>
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                    <label>Message (መልእክት)</label>
+                    <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 SOS Jimma Primary. All rights reserved. | አስተያየት: <a href="#contact" style="color: #9ca3af;">ለህይወት እናስተምራለን</a></p>
+    </footer>
+
+    <!-- =========================================
+         BRAIN GYM GAME MODAL
+         ========================================= -->
+    <div id="gym-modal">
+        <!-- Close Button -->
+        <button class="close-gym-btn" onclick="closeGame()"><i class="fas fa-times"></i> Close</button>
+
+        <div class="gym-scope">
+            <div class="gym-container">
+                
+                <!-- HUD -->
+                <div class="hud">
+                    <div><i class="fas fa-heart heart-icon"></i> <span id="ui-lives">3</span></div>
+                    <div><i class="fas fa-coins coin-icon"></i> <span id="ui-coins">0</span></div>
+                </div>
+
+                <!-- FEEDBACK POPUP -->
+                <div id="feedback-pop" class="feedback-overlay"></div>
+
+                <!-- SCREEN: HOME -->
+                <div id="gym-home" class="gym-screen active">
+                    <div style="flex-grow:1; display:flex; flex-direction:column; justify-content:center;">
+                        <h1 class="gym-h1">BRAIN GYM</h1>
+                        <p class="gym-subtitle">ULTIMATE 2025 EDITION</p>
+
+                        <div class="gym-grid-menu">
+                            <button class="gym-menu-card" onclick="gymState.prepGame('math')">
+                                <i class="fas fa-calculator" style="color:var(--primary)"></i> Math
+                            </button>
+                            <button class="gym-menu-card" onclick="gymState.prepGame('english')">
+                                <i class="fas fa-language" style="color:var(--success)"></i> English
+                            </button>
+                            <button class="gym-menu-card" onclick="gymState.showScreen('puzzle-menu')">
+                                <i class="fas fa-puzzle-piece" style="color:var(--warning)"></i> Puzzles
+                            </button>
+                            <button class="gym-menu-card" onclick="gymState.toggleShop(true)">
+                                <i class="fas fa-store" style="color:var(--accent)"></i> Shop
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SCREEN: PUZZLE MENU -->
+                <div id="puzzle-menu" class="gym-screen">
+                    <h2 style="text-align:center; margin-bottom:20px;">Arcade</h2>
+                    <div class="gym-grid-menu">
+                        <button class="gym-menu-card" onclick="gymState.startMemory()">
+                            <i class="fas fa-th" style="color:#d4fc79"></i> Memory
+                        </button>
+                        <button class="gym-menu-card" onclick="gymState.startStroop()">
+                            <i class="fas fa-palette" style="color:#ff6b6b"></i> Color Chaos
+                        </button>
+                        <button class="gym-menu-card" onclick="gymState.startGuess()">
+                            <i class="fas fa-question" style="color:#c77dff"></i> Hi-Lo
+                        </button>
+                    </div>
+                    <button class="btn-gym-back" onclick="gymState.goHome()">Back to Menu</button>
+                </div>
+
+                <!-- SCREEN: INPUT GAME (Math/Eng) -->
+                <div id="game-screen" class="gym-screen">
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                    <div class="timer-track"><div id="game-timer" class="timer-fill"></div></div>
+                    
+                    <div class="gym-q-box">
+                        <div id="q-label" style="opacity:0.6; text-transform:uppercase; font-size:0.8rem;">Question</div>
+                        <div id="q-text" class="big-text">?</div>
+                        <div id="q-sub" style="font-size:1.2rem; color:var(--primary)"></div>
+                    </div>
+
+                    <input type="text" id="gym-input" class="gym-input" placeholder="Type answer..." autocomplete="off">
+                    <button class="btn-gym-main" onclick="gymState.checkInput()">SUBMIT</button>
+                    <button class="btn-gym-back" onclick="gymState.goHome()">Exit Game</button>
+                </div>
+
+                <!-- SCREEN: MEMORY -->
+                <div id="memory-screen" class="gym-screen">
+                    <div class="timer-track"><div id="mem-timer" class="timer-fill"></div></div>
+                    <h3 style="text-align:center; margin-bottom:15px;">Find Pairs</h3>
+                    <div class="mem-grid" id="mem-board"></div>
+                    <button class="btn-gym-back" onclick="gymState.goHome()">Exit</button>
+                </div>
+
+                <!-- SCREEN: STROOP -->
+                <div id="stroop-screen" class="gym-screen">
+                    <div class="timer-track"><div id="stroop-timer-bar" class="timer-fill"></div></div>
+                    <p style="text-align:center; opacity:0.8;">Tap the <b style="color:white">INK COLOR</b></p>
+                    <div class="gym-q-box">
+                        <div id="stroop-text" class="stroop-word">RED</div>
+                    </div>
+                    <div class="color-grid" id="stroop-opts"></div>
+                    <button class="btn-gym-back" onclick="gymState.goHome()">Exit</button>
+                </div>
+
+                <!-- MODAL: SHOP -->
+                <div id="shop-modal" class="shop-modal-inner">
+                    <h2 style="margin-bottom:20px"><i class="fas fa-store"></i> Item Shop</h2>
+                    
+                    <div class="shop-item">
+                        <div><i class="fas fa-heart" style="color:var(--accent); margin-right:10px;"></i> <strong>Extra Life</strong></div>
+                        <button class="btn-gym-main" style="width:auto; margin:0; padding:10px 20px;" onclick="gymState.buyItem('life', 50)">50 🪙</button>
+                    </div>
+
+                    <div class="shop-item">
+                        <div><i class="fas fa-forward" style="color:var(--primary); margin-right:10px;"></i> <strong>Skip Level</strong></div>
+                        <button class="btn-gym-main" style="width:auto; margin:0; padding:10px 20px;" onclick="gymState.buyItem('skip', 30)">30 🪙</button>
+                    </div>
+
+                    <button class="btn-gym-back" style="width:100%; margin-top:20px;" onclick="gymState.toggleShop(false)">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* =========================================
+           1. SCHOOL WEBSITE LOGIC
+           ========================================= */
+        const timetableData = {
+            "1A": {
+                "Monday": ["A/orom", "Amh", "Eng", "HPE", "Env.sci", "Scie.En", "Maths"],
+                "Tuesday": ["A/orom", "Amh", "Eng", "HPE", "Geda", "Env.sci", "Eng"],
+                "Wednesday": ["Art", "Maths", "Geda", "Spoken", "Env.sci", "A/orom", "Maths"],
+                "Thursday": ["A/orom", "Amh", "Eng", "Moral", "Eng", "Spoken", "Maths"],
+                "Friday": ["Art", "Maths", "Maths", "Env.sci", "Eng", "Spoken"] // 6 periods for Friday
+            },
+            "1B": {
+                "Monday": ["Env.sci", "Maths", "Amh", "Eng", "Art", "Maths", "Spoken"],
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                "Tuesday": ["Spoken", "Maths", "HPE", "Eng", "A/orom", "Amh", "Moral"],
+                "Wednesday": ["Moral", "Env.sci", "Spoken", "HPE", "Eng", "Env.sci", "Amh"],
+                "Thursday": ["Moral", "HPE", "A/orom", "Maths", "Env.sci", "Scie.En", "Art"],
+                "Friday": ["Amh", "Eng", "HPE", "Maths", "Moral", "Env.sci"]
+            },
+            "1C": {
+                "Monday": ["HPE", "Eng", "Env.sci", "Art", "Moral", "Maths", "Env.sci"],
+                "Tuesday": ["A/orom", "Maths", "Env.sci", "Maths", "A/orom", "Moral", "Eng"],
+                "Wednesday": ["Amh", "Eng", "Amh", "Amh", "Art", "HPE", "Spoken"],
+                "Thursday": ["Eng", "Env.sci", "Eng", "Amh", "Maths", "Scie.En", "Eng"],
+                "Friday": ["A/orom", "Maths", "Env.sci", "Art", "Maths", "Moral"]
+            },
+            "1D": {
+                "Monday": ["Eng", "Env.sci", "Amh", "Maths", "Spoken", "A/orom", "Moral"],
+                "Tuesday": ["Moral", "Moral", "Env.sci", "A/orom", "Geda", "Maths", "Scie.En"],
+                "Wednesday": ["Maths", "Eng", "Env.sci", "Art", "HPE", "Maths", "Spoken"],
+                "Thursday": ["Eng", "Maths", "Eng", "Env.sci", "Art", "HPE", "Maths"],
+                "Friday": ["Amh", "Maths", "Spoken", "A/orom", "Eng", "Maths"]
+            },
+            "2A": {
+                "Monday": ["A/orom", "HPE", "Maths", "Scie.En", "Maths", "Amh", "Eng"],
+                "Tuesday": ["Eng", "Art", "Maths", "Env.sci", "HPE", "Moral", "Spoken"],
+                "Wednesday": ["Env.sci", "Amh", "Maths", "A/orom", "Eng", "Geda", "Eng"],
+                "Thursday": ["A/orom", "Env.sci", "Eng", "Spoken", "Amh", "Maths", "Env.sci"],
+                "Friday": ["Eng", "A/orom", "Maths", "Maths", "Env.sci", "Eng"]
+            },
+            "2B": {
+                "Monday": ["Eng", "Env.sci", "Geda", "Art", "Moral", "Maths", "A/orom"],
+                "Tuesday": ["Maths", "Maths", "Spoken", "Eng", "Maths", "Amh", "Maths"],
+                "Wednesday": ["Env.sci", "Moral", "A/orom", "Spoken", "Env.sci", "Eng", "Moral"],
+                "Thursday": ["Maths", "Eng", "Geda", "Amh", "Maths", "Env.sci", "HPE"],
+                "Friday": ["Eng", "HPE", "Eng", "A/orom", "Maths", "Env.sci"]
+            },
+            "2C": {
+                "Monday": ["Env.sci", "Art", "Amh", "HPE", "Eng", "Maths", "Moral"],
+                "Tuesday": ["Spoken", "Env.sci", "Eng", "Maths", "Amh", "Maths", "Env.sci"],
+                "Wednesday": ["Moral", "Maths", "Spoken", "Env.sci", "A/orom", "Env.sci", "Amh"],
+                "Thursday": ["A/orom", "Amh", "Art", "Eng", "Maths", "HPE", "Amh"],
+                "Friday": ["A/orom", "Art", "Geda", "Maths", "HPE", "Env.sci"]
+            },
+            "2D": {
+                "Monday": ["Maths", "Amh", "Eng", "Maths", "Env.sci", "A/orom", "Art"],
+                "Tuesday": ["HPE", "Art", "HPE", "Maths", "Eng", "Moral", "Amh"],
+                "Wednesday": ["Spoken", "Art", "Env.sci", "Amh", "Maths", "Spoken", "Env.sci"],
+                "Thursday": ["A/orom", "Amh", "Maths", "Moral", "Env.sci", "Eng", "Art"],
+                "Friday": ["Maths", "Amh", "Moral", "Env.sci", "Scie.En", "Amh"]
+            },
+            "3A": {
+                "Monday": ["Geda", "Moral", "Spoken", "Maths", "A/orom", "Env.sci", "Eng"],
+                "Tuesday": ["Amh", "Moral", "A/orom", "Eng", "Env.sci", "Maths", "Maths"],
+                "Wednesday": ["Eng", "HPE", "Maths", "Spoken", "A/orom", "Env.sci", "Art"],
+                "Thursday": ["Maths", "HPE", "Geda", "Env.sci", "A/orom", "ICT", "Eng"],
+                "Friday": ["Amh", "Maths", "Eng", "Scie.En", "Eng", "A/orom"]
+            },
+            "3B": {
+                "Monday": ["Spoken", "HPE", "Maths", "Amh", "Eng", "Env.sci", "A/orom"],
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                "Tuesday": ["Maths", "Amh", "Moral", "Env.sci", "Art", "Eng", "Spoken"],
+                "Wednesday": ["A/orom", "Scie.En", "Env.sci", "Amh", "Maths", "Eng", "Moral"],
+                "Thursday": ["Maths", "HPE", "Env.sci", "Moral", "Amh", "Eng", "Maths"],
+                "Friday": ["ICT", "Eng", "Maths", "Amh", "Env.sci", "Art"]
+            },
+            "3C": {
+                "Monday": ["Amh", "Moral", "HPE", "Env.sci", "Maths", "Spoken", "Eng"],
+                "Tuesday": ["ICT", "Scie.En", "Amh", "Maths", "Maths", "Eng", "HPE"],
+                "Wednesday": ["Env.sci", "Spoken", "Art", "Maths", "A/orom", "Maths", "Amh"],
+                "Thursday": ["HPE", "Eng", "Moral", "Env.sci", "Art", "Amh", "Maths"],
+                "Friday": ["Env.sci", "Spoken", "Art", "Maths", "A/orom", "Maths"]
+            },
+            "4A": {
+                "Monday": ["ICT", "Env.sci", "A/orom", "Eng", "HPE", "Moral", "Maths"],
+                "Tuesday": ["Eng", "Env.sci", "Maths", "Art", "A/orom", "Spoken", "Amh"],
+                "Wednesday": ["Eng", "A/orom", "Env.sci", "HPE", "Moral", "Art", "Maths"],
+                "Thursday": ["Maths", "Scie.En", "Eng", "A/orom", "Amh", "ICT", "Eng"],
+                "Friday": ["Maths", "Maths", "Art", "Spoken", "Env.sci", "Amh"]
+            },
+            "4B": {
+                "Monday": ["Eng", "HPE", "A/orom", "Amh", "Env.sci", "Spoken", "Maths"],
+                "Tuesday": ["Moral", "Maths", "HPE", "Env.sci", "ICT", "Scie.En", "Amh"],
+                "Wednesday": ["Eng", "Amh", "A/orom", "Maths", "Env.sci", "Spoken", "Art"],
+                "Thursday": ["Eng", "Amh", "Maths", "Spoken", "A/orom", "Geda", "Amh"],
+                "Friday": ["A/orom", "Amh", "Maths", "Maths", "Moral", "Env.sci"]
+            },
+            "4C": {
+                "Monday": ["A/orom", "Amh", "Eng", "Moral", "Maths", "Art", "Env.sci"],
+                "Tuesday": ["Amh", "Env.sci", "Eng", "Maths", "HPE", "Moral", "A/orom"],
+                "Wednesday": ["Scie.En", "HPE", "Amh", "ICT", "Eng", "Maths", "Maths"],
+                "Thursday": ["Art", "Spoken", "Env.sci", "Amh", "Maths", "Moral", "Eng"],
+                "Friday": ["Env.sci", "Maths", "Maths", "Art", "Eng", "A/orom"]
+            },
+            "5A": {
+                "Monday": ["Env.sci", "A/orom", "Maths", "Eng", "Amh", "Moral", "Geda"],
+                "Tuesday": ["Geda", "Eng", "Env.sci", "Maths", "A/orom", "Spoken", "HPE"],
+                "Wednesday": ["Eng", "Maths", "A/orom", "Env.sci", "Maths", "Moral", "Art"],
+                "Thursday": ["Eng", "Amh", "Maths", "Scie.En", "Eng", "A/orom", "Moral"],
+                "Friday": ["Eng", "Scie.En", "ICT", "Spoken", "A/orom", "Amh"]
+            },
+            "5B": {
+                "Monday": ["Eng", "Env.sci", "Maths", "Amh", "HPE", "ICT", "Art"],
+                "Tuesday": ["Maths", "A/orom", "Amh", "Eng", "Env.sci", "Maths", "Spoken"],
+                "Wednesday": ["Moral", "Spoken", "Env.sci", "Amh", "HPE", "Maths", "Moral"],
+                "Thursday": ["Maths", "Moral", "Amh", "Maths", "Spoken", "Env.sci", "Amh"],
+                "Friday": ["Amh", "Maths", "Spoken", "Moral", "Env.sci", "Amh"]
+            },
+            "5C": {
+                "Monday": ["Maths", "Art", "Eng", "Scie.En", "A/orom", "Maths"],
+                "Tuesday": ["Amh", "Eng", "Env.sci", "Maths", "HPE", "Moral", "Art"],
+                "Wednesday": ["Env.sci", "Art", "Maths", "Maths", "Moral", "Env.sci", "Art"],
+                "Thursday": ["Maths", "Spoken", "A/orom", "Env.sci", "Geda", "Maths", "Eng"],
+                "Friday": ["Maths", "Maths", "Art", "Eng", "Maths", "HPE"]
+            },
+            "6A": {
+                "Monday": ["Maths", "Env.sci", "A/orom", "ICT", "Maths", "Eng", "Art"],
+                "Tuesday": ["Maths", "A/orom", "Art", "Maths", "Amh", "Eng", "Env.sci"],
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                "Wednesday": ["HPE", "Amh", "A/orom", "Env.sci", "Maths", "Moral", "HPE"],
+                "Thursday": ["Amh", "A/orom", "Env.sci", "Maths", "Moral", "Art", "Eng"],
+                "Friday": ["A/orom", "HPE", "Amh", "A/orom", "Env.sci", "Maths"]
+            },
+            "6B": {
+                "Monday": ["Eng", "A/orom", "Maths", "Moral", "Env.sci", "Amh", "Art"],
+                "Tuesday": ["Maths", "Spoken", "Maths", "HPE", "Env.sci", "Eng", "Art"],
+                "Wednesday": ["Maths", "A/orom", "Maths", "Eng", "Env.sci", "Geda", "Moral"],
+                "Thursday": ["Maths", "Maths", "Art", "Spoken", "Env.sci", "Amh", "Moral"],
+                "Friday": ["Maths", "Maths", "Eng", "Env.sci", "Env.sci", "Amh"]
+            },
+            "7A": {
+                "Monday": ["Maths", "Geda", "S.sci", "Cit.Ship", "ICT", "Amh", "Spoken"],
+                "Tuesday": ["Genera", "ICT", "Vocatio", "Maths", "Geda", "S.sci", "Eng"],
+                "Wednesday": ["Art", "S.sci", "Maths", "Genera", "Cit.Ship", "Eng", "A/orom"],
+                "Thursday": ["Maths", "Eng", "HPE", "Amh", "A/orom", "Scie.En", "Genera"],
+                "Friday": ["A/orom", "Vocati", "Eng", "Genera", "Art", "Maths"]
+            },
+            "7B": {
+                "Monday": ["Maths", "Cit.Ship", "S.sci", "Genera", "Art", "Eng", "A/orom"],
+                "Tuesday": ["Genera", "Maths", "Eng", "Amh", "HPE", "S.sci", "Cit.Ship"],
+                "Wednesday": ["Scie.En", "Art", "ICT", "Eng", "Maths", "Amh", "Vocatio"],
+                "Thursday": ["ICT", "S.sci", "Vocatio", "Cit.Ship", "Genera", "Maths", "Spoken"],
+                "Friday": ["Maths", "A/orom", "S.sci", "Amh", "Eng", "Genera"]
+            },
+            "7C": {
+                "Monday": ["Amh", "Spoken", "Genera", "Art", "Maths", "S.sci", "Cit.Ship"],
+                "Tuesday": ["Maths", "HPE", "Cit.Ship", "Eng", "S.sci", "Genera", "Vocati"],
+                "Wednesday": ["Maths", "Eng", "S.sci", "Genera", "ICT", "Cit.Ship", "Amh"],
+                "Thursday": ["Maths", "A/orom", "Eng", "Scie.En", "ICT", "Vocati", "Amh"],
+                "Friday": ["Genera", "Art", "A/orom", "Maths", "S.sci", "Eng"]
+            },
+            "8A": {
+                "Monday": ["Cit.Ship", "Maths", "Genera", "A/orom", "Eng", "Geda", "ICT"],
+                "Tuesday": ["Eng", "A/orom", "ICT", "Maths", "S.sci", "Spoken", "Genera"],
+                "Wednesday": ["Scie.En", "Genera", "Maths", "Art", "Amh", "Art", "A/orom"],
+                "Thursday": ["Vocati", "Genera", "Cit.Ship", "Geda", "Maths", "Eng", "S.sci"],
+                "Friday": ["Amh", "Maths", "HPE", "Vocatio", "S.sci", "Eng"]
+            },
+            "8B": {
+                "Monday": ["Vocati", "S.sci", "Maths", "Eng", "Scie.En", "Cit.Ship", "Amh"],
+                "Tuesday": ["S.sci", "Amh", "Genera", "Cit.Ship", "Eng", "Maths", "A/orom"],
+                "Wednesday": ["Art", "Maths", "Eng", "A/orom", "S.sci", "ICT", "Genera"],
+                "Thursday": ["Genera", "Genera", "Maths", "S.sci", "Vocati", "Amh", "Eng"],
+                "Friday": ["Cit.Ship", "Spoken", "HPE", "Genera", "Art", "Maths"]
+            }
+        };
+
+        const gradeSectionSelect = document.getElementById('gradeSectionSelect');
+        const timetableContainer = document.getElementById('timetableContainer');
+        const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+        function populateGradeSectionDropdown() {
+            for (const section in timetableData) {
+                const option = document.createElement('option');
+                option.value = section;
+                option.textContent = section;
+                gradeSectionSelect.appendChild(option);
+            }
+        }
+
+        function displayTimetable(selectedGradeSection) {
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+            timetableContainer.innerHTML = '';
+            const timetable = timetableData[selectedGradeSection];
+            if (!timetable) {
+                timetableContainer.innerHTML = '<p>No timetable data found for this section.</p>';
+                return;
+            }
+
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            const periodHeaderRow = document.createElement('tr');
+            periodHeaderRow.innerHTML = '<th>Day / Period</th>';
+            for (let i = 1; i <= 7; i++) {
+                periodHeaderRow.innerHTML += <th>${i}</th>;
+            }
+            thead.appendChild(periodHeaderRow);
+
+            daysOfWeek.forEach(day => {
+                const row = document.createElement('tr');
+                const dayHeader = document.createElement('th');
+                dayHeader.textContent = day;
+                row.appendChild(dayHeader);
+
+                const subjects = timetable[day] || [];
+                const maxPeriods = (day === "Friday") ? 6 : 7;
+
+                for (let i = 0; i < maxPeriods; i++) {
+                    const cell = document.createElement('td');
+                    cell.textContent = subjects[i] || '';
+                    row.appendChild(cell);
+                }
+                if(day === "Friday") { row.appendChild(document.createElement('td')); } // Empty cell for period 7 on Friday
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            timetableContainer.appendChild(table);
+        }
+
+        gradeSectionSelect.addEventListener('change', (event) => {
+            displayTimetable(event.target.value);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            populateGradeSectionDropdown();
+            if (gradeSectionSelect.options.length > 0) {
+                displayTimetable(gradeSectionSelect.value);
+            }
+        });
+
+
+        /* =========================================
+           2. BRAIN GYM GAME LOGIC
+           ========================================= */
+        function openGame() {
+            document.getElementById('gym-modal').style.display = 'flex';
+            document.body.classList.add('game-active');
+            gymState.updateHUD();
+        }
+
+        function closeGame() {
+            document.getElementById('gym-modal').style.display = 'none';
+            document.body.classList.remove('game-active');
+            gymState.goHome(); 
+        }
+
+        const gymState = {
+            coins: 10,
+            lives: 3,
+            currentMode: null,
+            answer: null,
+            timerId: null,
+            timerVal: 100,
+            scoreStreak: 0,
+            
+            els: {
+                screens: document.querySelectorAll('.gym-screen'),
+                uiLives: document.getElementById('ui-lives'),
+                uiCoins: document.getElementById('ui-coins'),
+                qText: document.getElementById('q-text'),
+                qSub: document.getElementById('q-sub'),
+                qLabel: document.getElementById('q-label'),
+                input: document.getElementById('gym-input'),
+                feedback: document.getElementById('feedback-pop'),
+                memBoard: document.getElementById('mem-board')
+            },
+
+            audioCtx: new (window.AudioContext || window.webkitAudioContext)(),
+            playSound: function(type) {
+                if(this.audioCtx.state === 'suspended') this.audioCtx.resume();
+                const osc = this.audioCtx.createOscillator();
+                const gain = this.audioCtx.createGain();
+                osc.connect(gain); gain.connect(this.audioCtx.destination);
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                
+                if (type === 'correct') {
+                    osc.type = 'sine'; osc.frequency.setValueAtTime(600, this.audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(1200, this.audioCtx.currentTime + 0.1);
+                } else if (type === 'wrong') {
+                    osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, this.audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(50, this.audioCtx.currentTime + 0.3);
+                } else if (type === 'click') {
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(800, this.audioCtx.currentTime);
+                }
+                gain.gain.setValueAtTime(0.1, this.audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, this.audioCtx.currentTime + (type==='wrong'?0.3:0.1));
+                osc.start(); osc.stop(this.audioCtx.currentTime + (type==='wrong'?0.3:0.1));
+            },
+
+            showScreen: function(id) {
+                clearInterval(this.timerId);
+                this.els.screens.forEach(s => s.classList.remove('active'));
+                document.getElementById(id).classList.add('active');
+            },
+            goHome: function() {
+                this.showScreen('gym-home');
+                this.currentMode = null;
+            },
+            updateHUD: function() {
+                this.els.uiLives.innerText = this.lives;
+                this.els.uiCoins.innerText = this.coins;
+            },
+            toggleShop: function(show) {
+                document.getElementById('shop-modal').style.display = show ? 'flex' : 'none';
+            },
+
+            prepGame: function(mode) {
+                if(this.lives <= 0) { this.resetGame(); return; }
+                this.currentMode = mode;
+                this.showScreen('game-screen');
+                this.els.input.value = ''; this.els.input.focus();
+                this.nextQuestion();
+            },
+            nextQuestion: function() {
+                if(this.lives <= 0) { this.gameOver(); return; }
+                this.els.input.value = ''; this.els.input.focus();
+                this.startTimer(15);
+                if (this.currentMode === 'math') this.generateMath();
+                else this.generateEnglish();
+            },
+            r: function(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; },
+            generateMath: function() {
+                const diff = this.scoreStreak > 5 ? 2 : (this.scoreStreak > 2 ? 1 : 0);
+                let n1, n2, op, ans;
+                if(diff === 0) { n1=this.r(1,10); n2=this.r(1,10); op = Math.random()>.5?'+':'-'; }
+                else { n1=this.r(10,50); n2=this.r(2,10); op = Math.random()>.5?'+':'*'; }
+                if(op === '+') ans = n1+n2;
+                if(op === '-') { if(n1<n2) [n1,n2]=[n2,n1]; ans = n1-n2; }
+                if(op === '*') ans = n1*n2;
+                this.answer = ans;
+                this.els.qLabel.innerText = "Calculate";
+                this.els.qText.innerText = ${n1} ${op.replace('*','×')} ${n2};
+                this.els.qSub.innerText = "";
+            },
+            generateEnglish: function() {
+                const engWords = [{q:"Opposite of HOT", a:"COLD"}, {q:"Past of RUN", a:"RAN"}, {q:"Plural of MOUSE", a:"MICE"}];
+                const item = engWords[this.r(0, engWords.length-1)];
+                this.answer = item.a;
+                this.els.qLabel.innerText = "Word Challenge";
+                this.els.qText.innerText = item.q;
+                this.els.qSub.innerText = "";
+            },
+            checkInput: function() {
+                const val = this.els.input.value.toUpperCase().trim();
+                const corr = this.answer.toString().toUpperCase();
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                if (val === corr) { this.handleSuccess(10); this.nextQuestion(); } 
+                else { this.handleFail(); }
+            },
+            
+            startMemory: function() {
+                this.currentMode = 'memory';
+                this.showScreen('memory-screen');
+                const icons = ['🍕','🍕','🚀','🚀','🌵','🌵','🎈','🎈'];
+                icons.sort(() => 0.5 - Math.random());
+                this.els.memBoard.innerHTML = '';
+                let flipped = [], solved = 0;
+                this.startTimer(45, 'mem-timer');
+
+                icons.forEach(icon => {
+                    const card = document.createElement('div'); card.className = 'mem-card';
+                    card.innerHTML = <span>${icon}</span>;
+                    card.onclick = () => {
+                        if(card.classList.contains('flipped') || flipped.length >= 2) return;
+                        this.playSound('click');
+                        card.classList.add('flipped');
+                        flipped.push({el:card, val:icon});
+                        if(flipped.length === 2) {
+                            if(flipped[0].val === flipped[1].val) {
+                                flipped = []; solved++;
+                                if(solved === 4) { clearInterval(this.timerId); this.handleSuccess(50); setTimeout(() => this.showScreen('puzzle-menu'), 1000); }
+                            } else {
+                                setTimeout(() => { flipped[0].el.classList.remove('flipped'); flipped[1].el.classList.remove('flipped'); flipped = []; }, 700);
+                            }
+                        }
+                    };
+                    this.els.memBoard.appendChild(card);
+                });
+            },
+
+            startStroop: function() {
+                this.currentMode = 'stroop';
+                this.showScreen('stroop-screen');
+                this.nextStroop();
+                this.startTimer(30, 'stroop-timer-bar');
+            },
+            nextStroop: function() {
+                const colors = [{n:'RED', c:'#ef4444'}, {n:'BLUE', c:'#3b82f6'}, {n:'GREEN', c:'#22c55e'}];
+                const word = colors[this.r(0,2)];
+                const ink = colors[this.r(0,2)];
+                const txtEl = document.getElementById('stroop-text');
+                txtEl.innerText = word.n; txtEl.style.color = ink.c;
+                const grid = document.getElementById('stroop-opts');
+                grid.innerHTML = '';
+                let opts = [...colors].sort(() => 0.5 - Math.random());
+                opts.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'color-btn'; btn.style.backgroundColor = opt.c; btn.innerText = opt.n;
+                    btn.onclick = () => {
+                        if(opt.c === ink.c) { this.playSound('correct'); this.coins += 5; this.updateHUD(); this.showFeedback(true); this.nextStroop(); } 
+                        else { this.handleFail(); this.nextStroop(); }
+                    };
+                    grid.appendChild(btn);
+                });
+            },
+
+            startGuess: function() {
+                this.currentMode = 'math';
+                this.showScreen('game-screen');
+                this.answer = this.r(1,100);
+                this.els.qLabel.innerText = "Guess Number (1-100)";
+                this.els.qText.innerText = "?";
+                this.els.qSub.innerText = "Higher or Lower?";
+                this.els.input.value = "";
+                document.querySelector('.btn-gym-main').onclick = () => {
+                   const val = parseInt(this.els.input.value);
+                   if(isNaN(val)) return;
+                   if(val === this.answer) {
+                       this.handleSuccess(20);
+
+Teka Tesfaye, [1/14/2026 10:05 PM]
+                       setTimeout(() => {
+                           this.showScreen('puzzle-menu');
+                           document.querySelector('.btn-gym-main').onclick = () => this.checkInput();
+                       }, 1000);
+                   } else {
+                       this.els.qText.innerText = val < this.answer ? "HIGHER ▲" : "LOWER ▼";
+                       this.els.input.value = ""; this.els.input.focus();
+                   }
+                };
+            },
+
+            startTimer: function(sec, barId='game-timer') {
+                clearInterval(this.timerId);
+                this.timerVal = 100;
+                const bar = document.getElementById(barId);
+                if(bar) bar.style.width = '100%';
+                const step = 100 / (sec * 10);
+                this.timerId = setInterval(() => {
+                    this.timerVal -= step;
+                    if(bar) bar.style.width = this.timerVal + '%';
+                    if(this.timerVal <= 0) {
+                        clearInterval(this.timerId);
+                        this.handleFail(true);
+                        if(this.lives > 0) {
+                             if(this.currentMode === 'stroop') this.nextStroop();
+                             else if(this.currentMode === 'math' || this.currentMode === 'english') this.nextQuestion();
+                        }
+                    }
+                }, 100);
+            },
+            handleSuccess: function(reward) {
+                this.playSound('correct'); this.coins += reward; this.scoreStreak++; this.showFeedback(true); this.updateHUD();
+            },
+            handleFail: function() {
+                this.playSound('wrong'); this.lives--; this.scoreStreak = 0; this.showFeedback(false); this.updateHUD();
+                if(this.lives <= 0) this.gameOver();
+            },
+            showFeedback: function(isGood) {
+                const f = this.els.feedback;
+                f.innerText = isGood ? "NICE!" : "OOPS!";
+                f.className = "feedback-overlay " + (isGood ? "feed-correct" : "feed-wrong");
+                f.style.opacity = 1; f.style.transform = "translate(-50%, -50%) scale(1.2)";
+                setTimeout(() => { f.style.opacity = 0; f.style.transform = "translate(-50%, -50%) scale(1)"; }, 600);
+            },
+            gameOver: function() {
+                clearInterval(this.timerId);
+                alert("GAME OVER!\nTotal Coins: " + this.coins);
+                this.resetGame();
+            },
+            resetGame: function() {
+                this.lives = 3; this.coins = 0; this.scoreStreak = 0; this.updateHUD(); this.goHome();
+                document.querySelector('.btn-gym-main').onclick = () => this.checkInput();
+            },
+            buyItem: function(type, cost) {
+                if(this.coins >= cost) {
+                    this.coins -= cost;
+                    if(type === 'life') this.lives++;
+                    if(type === 'skip') { this.toggleShop(false); this.nextQuestion(); }
+                    this.updateHUD(); this.playSound('correct');
+                } else { this.playSound('wrong'); alert("Not enough coins!"); }
+            }
+        };
+
+        document.getElementById('gym-input').addEventListener('keyup', (e) => {
+            if(e.key === 'Enter') document.querySelector('.btn-gym-main').click();
+        });
+    </script>
+</body>
+</html>
